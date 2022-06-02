@@ -69,11 +69,25 @@ body {
     opacity: 1;
 }
 
-#subheader__searchBar {
-    width: 12.5em;
+.height{ height: 100vh; }
+.subheader__search{ position: relative; }
+
+.subheader__search input{
     height: 2.5rem;
+    text-indent: 1.5rem;
+    border: none;
+}
+
+.subheader__search button{
     position: absolute;
-    margin-left: 1rem;
+    left: 2rem;
+    height: 2.5rem;
+    width: 2.5rem;
+    
+}
+
+.subheader__search--content {
+    background-color: rgb(245, 245, 245);
 }
 
 #subheader__searchBar input#subheader__searchBa--searchField {

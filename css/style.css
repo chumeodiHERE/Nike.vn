@@ -62,12 +62,14 @@ body {
     background-color: rgb(255, 255, 255);
 }
 
-#subheader__sideBarMenu ul li a {
+.subheader__sideBarMenu ul li a {
     font-weight: bold;
     text-decoration: none;
     color: black;
     opacity: 1;
 }
+
+#subheader__logoNike:hover { opacity: 0.5; }
 
 .height{ height: 100vh; }
 .subheader__search{ position: relative; }

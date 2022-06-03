@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/swiper-bundle.css">
+    <link rel="icon" type="image/x-icon" href="img/NikeFavicon.png">
+    <script src="js/swiper-bundle.js"></script>
+    <title>Jordan. Nike VN</title>
+    <style>
+
+html,
+      body {
+        position: relative;
+        height: 100%;
+      }
+
+      .swiper-container {
+        width: 100%;
+        height: 100%;
+      }
+
+      .swiper-slide {
+        text-align: center;
+        font-size: 18px;
+        background: #fff;
+
+        /* Center slide text vertically */
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+      }
+
+      .swiper-slide img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+        .list-inline-item:not(:last-child) {
+            margin-right: 1.5rem !important;
+        }
+
+        .input-group-prepend {
+            margin-right: -2px !important;
+        }
+
+        .input-group-prepend {
+            margin-left: -2px !important;
+        }
+
+        .form-control:focus {
+            background-color: rgb(245, 245, 245);
+            border: none;
+        }
+
+        .form-control {
+            border-right: 0 !important;
+            border-left: 0 !important;
+        }
+
+        .card {
+            background-color: unset !important;
+            border: none !important;
+            color: black;
+            opacity: 1;
+            position: absolute !important;
+        }
+    </style>
+</head>
+<body>
+    <!-- header -->
+    <div class="container-fluid" id="header">
+        <div class="row">
+            <div class="col-md-1 text-center pt-1 pb-1">
+                 <a href="jordan.html"><img id="header__logoJumpMain" src="img/JumpMan.png" alt="Jordan Logo" title="Go to Jordan Website" style="max-width: 30%; height: auto;"></a>
+            </div>
+
+            <div class="col-md-2 offset-md-9 pt-1 pb-1 text-center" id="header__accountManagement">
+                <a href="https://www.nike.com/vn/help" style="margin-right: 0.625rem;">Help</a>
+                <span style="margin-right: 0.625rem;">|</span>
+                <a href="#" style="margin-right: 0.625rem;">Join Us</a>
+                <span style="margin-right: 0.625rem;">|</span>
+                <a href="#" style="margin-right: 0.625rem;">Sign In</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- subheader -->
+    <div class="container-fluid" id="subheader">
+        <div class="row">
+            <div class="col-md-1 text-center pt-3 pb-1" id="subheader__logoNike">
+                <a href="index.html"><img src="img/NikeLogo.png" alt="Nike Logo" title="Go to Nike Website" style="max-width: 60%; height: auto;"></a>
+            </div>
+
+            <div class="col-md-2 offset-md-4 text-center pt-3 pb-1 subheader__sideBarMenu">
+                <ul class="list-inline">
+                    <li class="list-inline-item"><a href="#">Men</a></li>
+                    <li class="list-inline-item"><a href="#">Women</a></li>
+                    <li class="list-inline-item"><a href="#">Kids</a></li>
+                </ul>
+            </div>
+
+            <div class="col-md-2 offset-md-3 pt-2 pb-1">
+                <div class="row d-flex justify-content-center align-items-center">
+                    <div class="col-md">
+                        <div>
+                            <form action="">
+                                <div class="input-group rounded-pill subheader__search">
+                                    <div class="input-group-prepend">
+                                        <button id="button-search" type="submit" class="btn rounded-circle subheader__search--content" style="padding: 0.3rem 0.3rem !important;"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                                            <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                                          </svg></button>
+                                    </div>
+                                    <input type="search" placeholder="Search" aria-describedby="button-search" class="form-control rounded-pill subheader__search--content">
+                                </div>
+                                
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- banner Ads -->
+    <div id="bannerAds__slideshow">
+        <div class="bannerAds__slide">
+            <center>
+                <p class="mb-0 mt-2">Sale Up to 40%</p>
+                <a class="mt-0" href="https://www.nike.com/vn/w/sale-3yaep" target="_blank" style="color: black; font-size: 0.75rem;">Shop All Our New Markdowns</a>
+            </center>
+        </div>
+        <div class="bannerAds__slide">
+            <center>
+                <p class="mb-0 mt-2">Free Delivery</p>
+                <p style="font-size: 0.75rem;">Applies to orders of 5.000.000đ or more. <a href="https://www.nike.com/vn/help/a/shipping-delivery-gs" target="_blank" style="color: black; font-size: 0.75rem;">View details</a></p>
+            </center>
+        </div>
+    </div>
+    <br class="d-block"><br class="d-block"><br class="d-block">
+
+    <!-- Main page -->
+    <div class="container-fluid text-center justify-content-center">
+        <div class="row">
+            <div class="col-md pt-5 pb-0">
+                <img src="img/JumpManBigLogo.png" alt="logo jump man" style="height: 6rem; position: relative;">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md pt-3 pb-0 subheader__sideBarMenu">
+                <ul class="list-inline">
+                    <li class="list-inline-item"><a href="#">Jordan Sport</a></li>
+                    <li class="list-inline-item"><a href="#">New Realese</a></li>
+                    <li class="list-inline-item"><a href="#">Men</a></li>
+                    <li class="list-inline-item"><a href="#">Women</a></li>
+                    <li class="list-inline-item"><a href="#">Kids</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="container newProduct">
+        <div class="row">
+            <div class="col-md col-sm">
+                <a href="#">
+                    <img src="img/Jordan36.png" alt="50th" style="max-width: 100%; height: auto;">
+                </a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md col-sm text-center justify-content-center">
+                <p class="mb-0 mt-md-5" style="font-weight: bold;">'On Fire'</p>
+                <h1 class="" style="font-size: 3.5rem; font-weight: bold; line-height: 3rem; font-family: Futura;">AIR JORDAN XXXVI</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md col-sm text-center justify-content-center">
+                <a href="#" class="btn btn-dark rounded-pill newProduct_buttonShopBlack">Shop</a>
+            </div>
+        </div>
+    </div>
+    <br class="d-block"><br class="d-block"><br class="d-block">
+
+    <div class="container newProduct">
+        <div class="row">
+            <div class="col-sm col-md">
+                <h2>Everyday Style</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md col-sm">
+                <a href="#">
+                    <img src="img/JordanSlide.png" alt="JdSlide" style="max-width: 100%; height: auto;">
+                </a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md col-sm text-center justify-content-center pt-5">
+                <h1 class="" style="font-size: 3.5rem; font-weight: bold; line-height: 3rem; font-family: Futura;">SLIDES ALL DAY</h1>
+                <p style="font-weight: bold;">Step into comfort and ease</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md col-sm text-center justify-content-center">
+                <a href="#" class="btn btn-dark rounded-pill newProduct_buttonShopBlack">Shop</a>
+            </div>
+        </div>
+    </div>
+    <br class="d-block"><br class="d-block"><br class="d-block">
+    <br class="d-block"><br class="d-block">
+
+    <div class="container mb-3">
+        <div class="row">
+            <div class="col-md-3 pt-3"><h2 style="margin: 0; padding: 0;">IN THE SPOTLIGHT</h2></div>
+            <div class="col-md-2 offset-md-7 text-center">
+                <button type="button" class="btn rounded-circle" style="background-color: rgb(245, 245, 245); padding: 0.3rem 0.3rem !important;"><div class="swiper-button-prev-unique"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-chevron-left" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
+                  </svg></div></button>
+                
+                <button type="button" class="btn rounded-circle" style="background-color: rgb(245, 245, 245); padding: 0.3rem 0.3rem !important;"><div class="swiper-button-next-unique"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
+                  </svg></div></button>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="swiper-container productSlide">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide d-block">
+                        <div class="row">
+                            <div class="col-md">
+                                <img class="card-img" src="img/Products/Product1.png">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4 ps-0 pt-0 pb-0">
+                                <p class="mt-3 mb-0" style="font-size: 0.9rem; font-weight: bold;">Air Jordan XXXVI</p>
+                            </div>
+                            <div class="col-md-3 offset-md-5 ps-0 pt-0">
+                                <p class="mt-3 mb-0" style="font-size: 0.9rem; font-weight: bold;">5,129,000đ</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-5 ps-2">
+                                <p style="font-size: 0.9rem; font-weight: bold; color: rgb(117, 117, 117);">Men's Basketball Shoes</p>
+                            </div>
+                            <div class="col-md-1 offset-md-6">&nbsp;</div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide d-block">
+                        <div class="row">
+                            <div class="col-md">
+                                <img class="card-img" src="img/Products/Product2.png">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4 ps-0 pt-0 pb-0">
+                                <p class="mt-3 mb-0" style="font-size: 0.9rem; font-weight: bold;">Air Jordan XXXVI</p>
+                            </div>
+                            <div class="col-md-3 offset-md-5 ps-0 pt-0">
+                                <p class="mt-3 mb-0" style="font-size: 0.9rem; font-weight: bold;">3,569,000đ</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 ps-1">
+                                <p style="font-size: 0.9rem; font-weight: bold; color: rgb(117, 117, 117);">Older Kid's Basketball Shoes</p>
+                            </div>
+                            <div class="col-md-1 offset-md-5">&nbsp;</div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide d-block">
+                        <div class="row">
+                            <div class="col-md">
+                                <img class="card-img" src="img/Products/Product3.png">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4 ps-0 pt-0 pb-0">
+                                <p class="mt-3 mb-0" style="font-size: 0.9rem; font-weight: bold;">Air Jordan 1 Mid</p>
+                            </div>
+                            <div class="col-md-3 offset-md-5 ps-0 pt-0">
+                                <p class="mt-3 mb-0" style="font-size: 0.9rem; font-weight: bold;">3,519,000đ</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-2 ps-2">
+                                <p style="font-size: 0.9rem; font-weight: bold; color: rgb(117, 117, 117);">Shoes</p>
+                            </div>
+                            <div class="col-md-1 offset-md-9">&nbsp;</div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide d-block">
+                        <div class="row">
+                            <div class="col-md">
+                                <img class="card-img" src="img/Products/Product4.png">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4 ps-0 pt-0 pb-0">
+                                <p class="mt-3 mb-0" style="font-size: 0.9rem; font-weight: bold;">Air Jordan 1 Mid</p>
+                            </div>
+                            <div class="col-md-3 offset-md-5 ps-0 pt-0">
+                                <p class="mt-3 mb-0" style="font-size: 0.9rem; font-weight: bold;">3,519,000đ</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4 ps-0">
+                                <p style="font-size: 0.9rem; font-weight: bold; color: rgb(117, 117, 117);">Women's Shoes</p>
+                            </div>
+                            <div class="col-md-1 offset-md-7">&nbsp;</div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide d-block">
+                        <div class="row">
+                            <div class="col-md">
+                                <img class="card-img" src="img/Products/Product5.png">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-5 ps-2 pt-0 pb-0">
+                                <p class="mt-3 mb-0" style="font-size: 0.9rem; font-weight: bold;">Air Jordan 1 Zoom Cmft</p>
+                            </div>
+                            <div class="col-md-3 offset-md-4 ps-0 pt-0">
+                                <p class="mt-3 mb-0" style="font-size: 0.9rem; font-weight: bold;">4,109,000đ</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-2 ps-0">
+                                <p style="font-size: 0.9rem; font-weight: bold; color: rgb(117, 117, 117);">Shoes</p>
+                            </div>
+                            <div class="col-md-1 offset-md-9">&nbsp;</div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide d-block">
+                        <div class="row">
+                            <div class="col-md">
+                                <img class="card-img" src="img/Products/Product6.png">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-5 ps-0 pt-0 pb-0">
+                                <p class="mt-3 mb-0" style="font-size: 0.9rem; font-weight: bold;">Jordan .5 'Why Not?'</p>
+                            </div>
+                            <div class="col-md-3 offset-md-4 ps-0 pt-0">
+                                <p class="mt-3 mb-0" style="font-size: 0.9rem; font-weight: bold;">3,829,000đ</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-5 ps-2 pe-1">
+                                <p style="font-size: 0.9rem; font-weight: bold; color: rgb(117, 117, 117);">Men's Basketball Shoes</p>
+                            </div>
+                            <div class="col-md-1 offset-md-6">&nbsp;</div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide d-block">
+                        <div class="row">
+                            <div class="col-md">
+                                <img class="card-img" src="img/Products/Product7.png">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 ps-0 pe-3 pt-0 pb-0">
+                                <p class="mt-3 mb-0" style="font-size: 0.9rem; font-weight: bold;">Jordan 'Why Not?' Zer0.5</p>
+                            </div>
+                            <div class="col-md-3 offset-md-3 ps-0 pt-0">
+                                <p class="mt-3 mb-0" style="font-size: 0.9rem; font-weight: bold;">2,549,000đ</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 ps-3">
+                                <p style="font-size: 0.9rem; font-weight: bold; color: rgb(117, 117, 117);">Older Kid's Basketball Shoes</p>
+                            </div>
+                            <div class="col-md-1 offset-md-5">&nbsp;</div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide d-block">
+                        <div class="row">
+                            <div class="col-md">
+                                <img class="card-img" src="img/Products/Product8.png">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4 ps-2 pt-0 pb-0">
+                                <p class="mt-3 mb-0" style="font-size: 0.9rem; font-weight: bold;">Air Jordan 4 Retro</p>
+                            </div>
+                            <div class="col-md-3 offset-md-5 ps-0 pt-0">
+                                <p class="mt-3 mb-0" style="font-size: 0.9rem; font-weight: bold;">5,869,000đ</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4 ps-2 pe-5">
+                                <p style="font-size: 0.9rem; font-weight: bold; color: rgb(117, 117, 117);">Men's Shoes</p>
+                            </div>
+                            <div class="col-md-1 offset-md-7">&nbsp;</div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide d-block">
+                        <div class="row">
+                            <div class="col-md">
+                                <img class="card-img" src="img/Products/Product9.png">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4 ps-2 pt-0 pb-0">
+                                <p class="mt-3 mb-0" style="font-size: 0.9rem; font-weight: bold;">Air Jordan 4 Retro</p>
+                            </div>
+                            <div class="col-md-3 offset-md-5 ps-0 pt-0">
+                                <p class="mt-3 mb-0" style="font-size: 0.9rem; font-weight: bold;">3,569,000đ</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-5 ps-2 pe-5">
+                                <p style="font-size: 0.9rem; font-weight: bold; color: rgb(117, 117, 117);">Older Kid's Shoes</p>
+                            </div>
+                            <div class="col-md-1 offset-md-6">&nbsp;</div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide d-block">
+                        <div class="row">
+                            <div class="col-md">
+                                <img class="card-img" src="img/Products/Product10.png">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-5 ps-0 pt-0 pb-0">
+                                <p class="mt-3 mb-0" style="font-size: 0.9rem; font-weight: bold;">Air Jordan 1 Low SE</p>
+                            </div>
+                            <div class="col-md-3 offset-md-4 ps-0 pt-0">
+                                <p class="mt-3 mb-0" style="font-size: 0.9rem; font-weight: bold;">3,239,000đ</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-5 ps-2 pe-5">
+                                <p style="font-size: 0.9rem; font-weight: bold; color: rgb(117, 117, 117);">Women's Shoes</p>
+                            </div>
+                            <div class="col-md-1 offset-md-6">&nbsp;</div>
+                        </div>
+                    </div> 
+                </div>
+                <div class="swiper-pagination d-block position-relative mt-2"></div>
+            </div>
+        </div>
+    </div>
+
+      <script>
+        var swiper = new Swiper(".productSlide", {
+            slidesPerView: 3,
+            spaceBetween: 30,
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            navigation: {
+                nextEl: ".swiper-button-next-unique",
+                prevEl: ".swiper-button-prev-unique",
+            },
+        });
+      </script>
+</body>
+</html>

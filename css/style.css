@@ -111,35 +111,6 @@ body {
     background-color: rgb(245, 245, 245);
 }
 
-
-#bannerAds__slideshow {
-    width: 200%;
-    height: 3.625rem;
-    position: absolute;
-    background-color: rgb(245, 245, 245);
-    
-}
-
-@keyframes bannerAds__slide {
-    0%   {right: 0rem;}
-    25%   {right: 0rem;}
-    50%   {right: 50%;}
-    75%   {right: 50%;}
-    100%   {right: 0rem;}
-}
-
-.bannerAds__slide {
-    position: relative;
-    width: 50%;
-    height: 100%;
-    float: left;
-    animation-name: bannerAds__slide;
-    animation-duration: 10s;
-    animation-iteration-count: infinite;
-    animation-timing-function: ease;
-}
-
-
 .newProduct_buttonShopBlack:hover { opacity: 0.5; }
 .moreProduct__buttonShop:hover {
     background-color: black;

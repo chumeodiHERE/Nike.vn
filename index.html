@@ -7,7 +7,9 @@
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/swiper-bundle.css">
     <link rel="icon" type="image/x-icon" href="img/NikeFavicon.png">
+    <script src="js/swiper-bundle.js"></script>
     <title>Nike - Just Do It. Nike.vn</title>
     <style>
         .list-inline-item:not(:last-child) {
@@ -39,6 +41,38 @@
             opacity: 1;
             position: absolute !important;
         }
+
+        .swiper-container {
+            width: 100%;
+            height: 100%;
+        }
+
+      .swiper-slide {
+        text-align: center;
+        font-size: 18px;
+        background: #fff;
+
+        /* Center slide text vertically */
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+      }
+
+      .swiper-slide img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
     </style>
 </head>
 <body>
@@ -96,21 +130,44 @@
     </div>
 
     <!-- banner Ads -->
-    <div id="bannerAds__slideshow">
-        <div class="bannerAds__slide">
-            <center>
-                <p class="mb-0 mt-2">Sale Up to 40%</p>
-                <a class="mt-0" href="https://www.nike.com/vn/w/sale-3yaep" target="_blank" style="color: black; font-size: 0.75rem;">Shop All Our New Markdowns</a>
-            </center>
-        </div>
-        <div class="bannerAds__slide">
-            <center>
-                <p class="mb-0 mt-2">Free Delivery</p>
-                <p style="font-size: 0.75rem;">Applies to orders of 5.000.000đ or more. <a href="https://www.nike.com/vn/help/a/shipping-delivery-gs" target="_blank" style="color: black; font-size: 0.75rem;">View details</a></p>
-            </center>
+    <div class="container-fluid" style="background-color: rgb(229, 229, 229);">
+        <div class="row">
+            <div class="swiper-container adsSlide">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide d-block" style="background-color: rgb(229, 229, 229);">
+                        <div class="row">
+                            <div class="col-md pt-0 pb-0">
+                                <center>
+                                    <p class="mb-0 mt-3">Sale Up to 40%</p>
+                                    <p style="font-size: 0.75rem;">Shop All Our New Markdowns. <a href="https://www.nike.com/vn/w/sale-3yaep" target="_blank" style="color: black; font-size: 0.75rem;">View details</a></p>
+                                </center>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide d-block" style="background-color: rgb(229, 229, 229);">
+                        <div class="row">
+                            <div class="col-md pt-0 pb-0">
+                                <center>
+                                    <p class="mb-0 mt-3">Free Delivery</p>
+                                    <p style="font-size: 0.75rem;">Applies to orders of 5.000.000đ or more. <a href="https://www.nike.com/vn/help/a/shipping-delivery-gs" target="_blank" style="color: black; font-size: 0.75rem;">View details</a></p>
+                                </center>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-    <br class="d-block"><br class="d-block">
+    <!-- Initialize Swiper -->
+    <script>
+        var swiper = new Swiper(".adsSlide", {
+          centeredSlides: true,
+          autoplay: {
+            delay: 4000,
+            disableOnInteraction: false,
+          },
+        });
+    </script>
 
     <!-- Main page -->
     <div class="container newProduct">
@@ -165,7 +222,7 @@
         <div class="row">
             <div class="col-sm col-md-6 bg-image">
                 <div class="bg-image position-relative" style="background-image: url('img/AirForce.png');">
-                    <div class="card position-absolute" style="padding-top: 37rem; position: relative;">
+                    <div class="card position-absolute ps-3" style="padding-top: 36rem;">
                         <div class="card-body">
                             <h5 class="card-title">Back In Stock: Nike Air Force 1 '07</h5>
                             <a href="#" class="btn btn-dark rounded-pill newProduct_buttonShopBlack">Shop</a>
@@ -175,7 +232,7 @@
             </div>
             <div class="col-sm col-md-6 bg-image">
                 <div class="bg-image position-relative" style="background-image: url('img/BasketballShoes.png');">
-                    <div class="card position-absolute" style="padding-top: 37rem; position: relative;">
+                    <div class="card position-absolute ps-3" style="padding-top: 36rem;">
                         <div class="card-body">
                             <h5 style="color: white;" class="card-title">Nike Basketball: New Items, Available Now</h5>
                             <a href="#" class="btn btn-dark rounded-pill newProduct_buttonShopBlack">Shop</a>
@@ -227,7 +284,7 @@
         <div class="row">
             <div class="col-sm col-md-6 bg-image">
                 <div class="bg-image position-relative" style="background-image: url('img/Jordan1.png');">
-                    <div class="card position-absolute" style="padding-top: 37rem; position: relative;">
+                    <div class="card position-absolute ps-3" style="padding-top: 36rem;">
                         <div class="card-body">
                             <h5 class="card-title">The Latest Dunk & Air Jordan 1 Sneakers</h5>
                             <a href="#" class="btn btn-dark rounded-pill newProduct_buttonShopBlack">Shop</a>
@@ -237,7 +294,7 @@
             </div>
             <div class="col-sm col-md-6 bg-image">
                 <div class="bg-image position-relative" style="background-image: url('img/Af1PLT.png');">
-                    <div class="card position-absolute" style="padding-top: 37rem; position: relative;">
+                    <div class="card position-absolute ps-3" style="padding-top: 36rem;">
                         <div class="card-body">
                             <h5 class="card-title">AF1 PLT.AF.ORM: Go Higher</h5>
                             <a href="#" class="btn btn-dark rounded-pill newProduct_buttonShopBlack">Shop</a>
@@ -284,28 +341,28 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-sm col-md-4 bg-image position-relative">
-                <div class="bg-image" style="background-image: url('img/Men.png');">
-                    <div class="card position-absolute position-relative" style="padding-top: 38rem;">
-                        <div class="card-body position-absolute">
+            <div class="col-sm col-md-4 bg-image">
+                <div class="bg-image position-relative" style="background-image: url('img/Men.png');">
+                    <div class="card position-absolute ps-3" style="padding-top: 36rem;">
+                        <div class="card-body">
                             <a href="#" class="btn btn-light rounded-pill moreProduct__buttonShop">Men's</a>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-sm col-md-4 bg-image position-relative">
-                <div class="bg-image" style="background-image: url('img/Women.png');">
-                    <div class="card position-absolute position-relative" style="padding-top: 38rem;">
-                        <div class="card-body position-absolute">
+            <div class="col-sm col-md-4 bg-image">
+                <div class="bg-image position-relative" style="background-image: url('img/Women.png');">
+                    <div class="card position-absolute ps-3" style="padding-top: 36rem;">
+                        <div class="card-body">
                             <a href="#" class="btn btn-light rounded-pill moreProduct__buttonShop">Women's</a>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-sm col-md-4 bg-image position-relative">
-                <div class="bg-image" style="background-image: url('img/Kid.png');">
-                    <div class="card position-absolute position-relative" style="padding-top: 38rem;">
-                        <div class="card-body position-absolute">
+            <div class="col-sm col-md-4 bg-image">
+                <div class="bg-image position-relative" style="background-image: url('img/Kid.png');">
+                    <div class="card position-absolute ps-3" style="padding-top: 36rem;">
+                        <div class="card-body">
                             <a href="#" class="btn btn-light rounded-pill moreProduct__buttonShop">Kids'</a>
                         </div>
                     </div>

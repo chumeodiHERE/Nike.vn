@@ -142,21 +142,44 @@
     </div>
 
     <!-- banner Ads -->
-    <div id="bannerAds__slideshow">
-        <div class="bannerAds__slide">
-            <center>
-                <p class="mb-0 mt-2">Sale Up to 40%</p>
-                <a class="mt-0" href="https://www.nike.com/vn/w/sale-3yaep" target="_blank" style="color: black; font-size: 0.75rem;">Shop All Our New Markdowns</a>
-            </center>
-        </div>
-        <div class="bannerAds__slide">
-            <center>
-                <p class="mb-0 mt-2">Free Delivery</p>
-                <p style="font-size: 0.75rem;">Applies to orders of 5.000.000đ or more. <a href="https://www.nike.com/vn/help/a/shipping-delivery-gs" target="_blank" style="color: black; font-size: 0.75rem;">View details</a></p>
-            </center>
+    <div class="container-fluid" style="background-color: rgb(229, 229, 229);">
+        <div class="row">
+            <div class="swiper-container adsSlide">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide d-block" style="background-color: rgb(229, 229, 229);">
+                        <div class="row">
+                            <div class="col-md pt-0 pb-0">
+                                <center>
+                                    <p class="mb-0 mt-3">Sale Up to 40%</p>
+                                    <p style="font-size: 0.75rem;">Shop All Our New Markdowns. <a href="https://www.nike.com/vn/w/sale-3yaep" target="_blank" style="color: black; font-size: 0.75rem;">View details</a></p>
+                                </center>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide d-block" style="background-color: rgb(229, 229, 229);">
+                        <div class="row">
+                            <div class="col-md pt-0 pb-0">
+                                <center>
+                                    <p class="mb-0 mt-3">Free Delivery</p>
+                                    <p style="font-size: 0.75rem;">Applies to orders of 5.000.000đ or more. <a href="https://www.nike.com/vn/help/a/shipping-delivery-gs" target="_blank" style="color: black; font-size: 0.75rem;">View details</a></p>
+                                </center>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-    <br class="d-block"><br class="d-block"><br class="d-block">
+    <!-- Initialize Swiper -->
+    <script>
+        var swiper = new Swiper(".adsSlide", {
+          centeredSlides: true,
+          autoplay: {
+            delay: 4000,
+            disableOnInteraction: false,
+          },
+        });
+    </script>
 
     <!-- Main page -->
     <div class="container-fluid text-center justify-content-center">
@@ -544,7 +567,7 @@
         <div class="row">
             <div class="col-sm col-md-6 bg-image">
                 <div class="bg-image position-relative" style="background-image: url('img/Explore.png');">
-                    <div class="card position-absolute" style="padding-top: 36rem; position: relative;">
+                    <div class="card position-absolute" style="padding-top: 35rem;">
                         <div class="card-body">
                             <h5 class="card-title" style="color: white;">Explore Jordan Basketball</h5>
                             <a href="#" class="btn btn-light rounded-pill newProduct_buttonShopBlack">Explore</a>
@@ -554,7 +577,7 @@
             </div>
             <div class="col-sm col-md-6 bg-image">
                 <div class="bg-image position-relative" style="background-image: url('img/ExploreJD1.png');">
-                    <div class="card position-absolute" style="padding-top: 36rem; position: relative;">
+                    <div class="card position-absolute" style="padding-top: 35rem;">
                         <div class="card-body">
                             <h5 class="card-title" style="color: white;">The Ultimate History of Air Jordan</h5>
                             <a href="#" class="btn btn-light rounded-pill newProduct_buttonShopBlack">Explore</a>

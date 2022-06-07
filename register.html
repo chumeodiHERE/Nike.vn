@@ -9,7 +9,8 @@
     <link rel="stylesheet" href="css/swiper-bundle.css">
     <link rel="icon" type="image/x-icon" href="img/NikeFavicon.png">
     <script src="js/swiper-bundle.js"></script>
-    <title>Nike - Just Do It. Nike.vn</title>
+    <title>Register</title>
+
     <style>
         .list-inline-item:not(:last-child) {
             margin-right: 1.5rem !important;
@@ -72,6 +73,19 @@
             height: 100%;
             object-fit: cover;
         }
+
+        ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+            color: #ced4da;
+            opacity: 1; /* Firefox */
+        }
+
+        :-ms-input-placeholder { /* Internet Explorer 10-11 */
+            color: #ced4da;
+        }
+
+        ::-ms-input-placeholder { /* Microsoft Edge */
+            color: #ced4da;
+        }
     </style>
 </head>
 <body>
@@ -85,7 +99,7 @@
             <div class="col-sm col-md-2 offset-md-9 pt-1 pb-1 text-center" id="header__accountManagement">
                 <a href="https://www.nike.com/vn/help" style="margin-right: 0.625rem;">Help</a>
                 <span style="margin-right: 0.625rem;">|</span>
-                <a href="register.html" style="margin-right: 0.625rem;">Join Us</a>
+                <a href="#" style="margin-right: 0.625rem;">Join Us</a>
                 <span style="margin-right: 0.625rem;">|</span>
                 <a href="#" style="margin-right: 0.625rem;">Sign In</a>
             </div>
@@ -95,11 +109,11 @@
     <!-- subheader -->
     <div class="container-fluid" id="subheader">
         <div class="row">
-            <div class="col-sm col-md-1 text-center pt-3 pb-1" id="subheader__logoNike">
+            <div class="col-md-1 text-center pt-3 pb-1" id="subheader__logoNike">
                 <a href="index.html"><img src="img/NikeLogo.png" alt="Nike Logo" title="Go to Nike Website" style="max-width: 60%; height: auto;"></a>
             </div>
 
-            <div class="col-sm col-md-2 offset-md-4 text-center pt-3 pb-1 subheader__sideBarMenu">
+            <div class="col-md-2 offset-md-4 text-center pt-3 pb-1 subheader__sideBarMenu">
                 <ul class="list-inline">
                     <li class="list-inline-item"><a href="#">Men</a></li>
                     <li class="list-inline-item"><a href="#">Women</a></li>
@@ -107,7 +121,7 @@
                 </ul>
             </div>
 
-            <div class="col-sm col-md-2 offset-md-3 pt-2 pb-1">
+            <div class="col-md-2 offset-md-3 pt-2 pb-1">
                 <div class="row d-flex justify-content-center align-items-center">
                     <div class="col-md">
                         <div>
@@ -120,6 +134,7 @@
                                     </div>
                                     <input type="search" placeholder="Search" aria-describedby="button-search" class="form-control rounded-pill subheader__search--content">
                                 </div>
+                                
                             </form>
                         </div>
                     </div>
@@ -128,252 +143,90 @@
         </div>
     </div>
 
-    <!-- banner Ads -->
-    <div class="container-fluid" style="background-color: rgb(229, 229, 229);">
+    <!-- Main Page -->
+    <div class="container">
         <div class="row">
-            <div class="swiper-container adsSlide">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide d-block" style="background-color: rgb(229, 229, 229);">
-                        <div class="row">
-                            <div class="col-sm col-md pt-0 pb-0">
-                                <center>
-                                    <p class="mb-0 mt-3">Sale Up to 40%</p>
-                                    <p style="font-size: 0.75rem;">Shop All Our New Markdowns. <a href="https://www.nike.com/vn/w/sale-3yaep" target="_blank" style="color: black; font-size: 0.75rem;">View details</a></p>
-                                </center>
+            <div class="col-md-4">&nbsp;</div>
+            <div class="col-md-4 justify-content-center pt-5">
+                <div class="row justify-content-center text-center pt-5">
+                    <img class="pb-4" src="img/swoosh.png" alt="" style="width: 15%;">
+                    <h4 class="pb-4" style="font-family: TradeGothicStd;">BECOME A NIKE MEMBER</h4>
+                    <p style="color: rgb(141, 141, 141);">Create your Nike Member profile and get first access to the very best of Nike products, inspiration and community.</p>
+                </div>
+                <div class="row">
+                    <div class="col-md">
+                        <form action="">
+                            <div class="row" style="width: 90%; margin: 0 auto;">
+                                <div class="col-12 mt-4">
+                                    <input type="email" id="formEmail" class="form-control" placeholder="Email address" style="border-left: 1px solid #ced4da !important; border-right: 1px solid #ced4da !important;" />
+                                </div>
+                                
+                                <div class="col-12 mt-4">
+                                    <input type="password" id="formPass" class="form-control" placeholder="Password" style="border-left: 1px solid #ced4da !important; border-right: 1px solid #ced4da !important;" />
+                                </div>
+
+                                <div class="col-12 mt-4">
+                                    <input type="text" id="formFirstName" class="form-control" placeholder="First Name" style="border-left: 1px solid #ced4da !important; border-right: 1px solid #ced4da !important;" />
+                                </div>
+
+                                <div class="col-12 mt-4">
+                                    <input type="text" id="formLasttName" class="form-control" placeholder="Last Name" style="border-left: 1px solid #ced4da !important; border-right: 1px solid #ced4da !important;" />
+                                </div>
+
+                                <div class="col-12 mt-4 text-center">
+                                    <input type="date" id="formDoB" class="form-control" placeholder="Date of Birth" style="border-left: 1px solid #ced4da !important; border-right: 1px solid #ced4da !important;" />
+                                    <p style="font-size: small; color: rgb(141, 141, 141);">Get a Nike Member Reward every year on your Birthday.</p>
+                                </div>
+
+                                <div class="col-12 mt-3">
+                                    <select class="form-select" style="color: rgb(141, 141, 141);">
+                                        <option selected>Viet Nam</option>
+                                        <option value="1">United Kingdom</option>
+                                        <option value="2">United States</option>
+                                        <option value="3">Laos</option>
+                                        <option value="4">Japan</option>
+                                        <option value="5">Korean</option>
+                                        <option value="6">Quatar</option>
+                                        <option value="7">Yemen</option>
+                                        <option value="8">Uruguay</option>
+                                        <option value="9">Taiwan</option>
+                                        <option value="10">Thailand</option>
+                                      </select>
+                                </div>
+
+                                <div class="col-12 mt-4 position-relative" style="margin-bottom: 3rem !important;">
+                                    <ul class="list-inline" style="width: 100%;">
+                                        <li class="list-inline-item position-absolute" style="width: 45%; left: 3.2% !important;"><button style="width: 100%; height: auto;" type="button" class="btn btn-outline-dark">Male</button></li>
+                                        <li class="list-inline-item position-absolute" style="width: 45%; right: 3.2% !important;"><button style="width: 100%; height: auto;" type="button" class="btn btn-outline-dark">Female</button></li>
+                                    </ul>
+                                </div>
+
+                                <div class="col-12">
+                                    <div class="form-check justify-content-center">
+                                        <input class="form-check-input me-2" type="checkbox" value="" id="formComfirmTeamofService" />
+                                        <label style="font-size: 0.8rem; color: rgb(141, 141, 141);" class="form-check-label" for="formComfirmTeamofService">
+                                            Sign up for emails to get updates from Nike on products, offers and your Member benefits
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="col-12 mt-4 text-center">
+                                    <p style="font-size: 0.8rem; color: rgb(141, 141, 141);">By creating an account, you agree to Nike's <a style="color: rgb(141, 141, 141); text-decoration: underline;" href="#">Privacy Policy</a> and <a style="color: rgb(141, 141, 141); text-decoration: underline;" href="#">Terms of Use</a>.</p>
+                                </div>
+
+                                <div class="col-12 mt-5 justify-content-center">
+                                    <button type="submit" class="btn btn-dark" style="width: 100%; height: auto;"><span style="font-family: TradeGothicStd;">JOIN US</span></button>
+                                </div>
+
+                                <div class="col-12 mt-3 text-center">
+                                    <p style="font-size: 0.8rem; color: rgb(141, 141, 141);">Already a Member? <a style="color: black; text-decoration: underline;" href="">Sign In.</a></p>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide d-block" style="background-color: rgb(229, 229, 229);">
-                        <div class="row">
-                            <div class="col-sm col-md pt-0 pb-0">
-                                <center>
-                                    <p class="mb-0 mt-3">Free Delivery</p>
-                                    <p style="font-size: 0.75rem;">Applies to orders of 5.000.000đ or more. <a href="https://www.nike.com/vn/help/a/shipping-delivery-gs" target="_blank" style="color: black; font-size: 0.75rem;">View details</a></p>
-                                </center>
-                            </div>
-                        </div>
+                        </form>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-    <!-- Initialize Swiper -->
-    <script>
-        var swiper = new Swiper(".adsSlide", {
-          centeredSlides: true,
-          autoplay: {
-            delay: 4000,
-            disableOnInteraction: false,
-          },
-        });
-    </script>
-
-    <!-- Main page -->
-    <div class="container newProduct">
-        <div class="row">
-            <div class="col-md col-sm">
-                <a href="#">
-                    <img src="img/50thAnny.png" alt="50th" style="max-width: 100%; height: auto;">
-                </a>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md col-sm text-center justify-content-center">
-                <h1 class="mt-md-5 mt-sm-3" style="font-size: 4.5rem; font-weight: bold; line-height: 4rem; font-family: Futura;">THINK YOU'VE<br>SEEN IT ALL?</h1>
-                <p>The first 50 years were just the beginning. Watch our 50th anniversary film,<br>directed by and starring Spike Lee and Indigo Hubbard-Salk.</p>
-            </div>
-        </div>
-    </div>
-    <div class="container-fluid">
-        <div class="row" style="padding-top: 5rem !important;"><p>&nbsp;</p></div>
-    </div>
-
-    <div class="container newProduct">
-        <div class="row">
-            <div class="col-md col-sm">
-                <a href="#">
-                    <video autoplay muted loop style="max-width: 100%; height: auto;">
-                        <source src="video/Pegasus.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                </a>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md col-sm text-center justify-content-center">
-                <p class="mb-0 mt-md-5" style="font-weight: bold;">Nike Air Zoom Pegasus 39</p>
-                <h1 class="" style="font-size: 4.5rem; font-weight: bold; line-height: 4rem; font-family: Futura;">IN PEG WE TRUST</h1>
-                <p>Introducing the new Nike Air Zoom Pegasus 39, featuring the comfort and consistency from the shoe runners<br>know and love, plus our latest innovations designed to take your next run to bold new heights.</p>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md col-sm text-center justify-content-center">
-                <a href="#" class="btn btn-dark rounded-pill newProduct_buttonShopBlack">Shop</a>
-            </div>
-        </div>
-    </div>
-    <div class="container-fluid">
-        <div class="row" style="padding-top: 5rem !important;"><p>&nbsp;</p></div>
-    </div>
-
-    <div class="container otherProduct position-relative">
-        <div class="row">
-            <div class="col-sm col-md">
-                <h2>Latest & Restock</h2>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-sm col-md-6 bg-image">
-                <div class="bg-image" style="background-image: url('img/AirForce.png');">
-                    <div class="card position-absolute" style="bottom: 5% !important; left: 3% !important;">
-                        <div class="card-body">
-                            <h5 class="card-title">Back In Stock: Nike Air Force 1 '07</h5>
-                            <a href="#" class="btn btn-dark rounded-pill newProduct_buttonShopBlack">Shop</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm col-md-6 bg-image">
-                <div class="bg-image" style="background-image: url('img/BasketballShoes.png');">
-                    <div class="card position-absolute" style="bottom: 5% !important; left: 3% !important;">
-                        <div class="card-body">
-                            <h5 style="color: white;" class="card-title">Nike Basketball: New Items, Available Now</h5>
-                            <a href="#" class="btn btn-dark rounded-pill newProduct_buttonShopBlack">Shop</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="container-fluid">
-        <div class="row" style="padding-top: 5rem !important;"><p>&nbsp;</p></div>
-    </div>
-
-    <div class="container newProduct">
-        <div class="row">
-            <div class="col-sm col-md">
-                <h2>Nike Golf</h2>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md col-sm">
-                <a href="#">
-                    <img src="img/NikeGolf.png" alt="Golf" style="max-width: 100%; height: auto;">
-                </a>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md col-sm text-center justify-content-center">
-                <p class="mb-0 mt-md-5" style="font-weight: bold;">Nike Air Zoom Infinity Tour NEXT%</p>
-                <h1 class="" style="font-size: 4.5rem; font-weight: bold; line-height: 4rem; font-family: Futura;">CHANGE THE GAME</h1>
-                <p>We listened to the feedback you had on the Infinity Tour, refined it and brought it to life on the Nike Air Zoom Infinity Tour NEXT%.<br>We increased the overall volume to give your foot more room, put an extra Zoom Air unit in the forefoot for even more energy transfer through your swing, and added more traction in key areas to help reduce slipping.<br>The result is an incredibly responsive, comfortable shoe that we know you're going to love.</p>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md col-sm text-center justify-content-center">
-                <a href="#" class="btn btn-dark rounded-pill newProduct_buttonShopBlack">Shop</a>
-            </div>
-        </div>
-    </div>
-    <div class="container-fluid">
-        <div class="row" style="padding-top: 5rem !important;"><p>&nbsp;</p></div>
-    </div>
-
-    <div class="container otherProduct position-relative">
-        <div class="row">
-            <div class="col-sm col-md">
-                <h2>Trending</h2>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-sm col-md-6 bg-image">
-                <div class="bg-image" style="background-image: url('img/Jordan1.png');">
-                    <div class="card position-absolute" style="bottom: 3% !important; left: 3% !important;">
-                        <div class="card-body">
-                            <h5 class="card-title">The Latest Dunk & Air Jordan 1 Sneakers</h5>
-                            <a href="#" class="btn btn-dark rounded-pill newProduct_buttonShopBlack">Shop</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm col-md-6 bg-image">
-                <div class="bg-image" style="background-image: url('img/Af1PLT.png');">
-                    <div class="card position-absolute" style="bottom: 3% !important; left: 3% !important;">
-                        <div class="card-body">
-                            <h5 class="card-title">AF1 PLT.AF.ORM: Go Higher</h5>
-                            <a href="#" class="btn btn-dark rounded-pill newProduct_buttonShopBlack">Shop</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="container-fluid">
-        <div class="row" style="padding-top: 5rem !important;"><p>&nbsp;</p></div>
-    </div>
-
-    <div class="container newProduct">
-        <div class="row">
-            <div class="col-md col-sm">
-                <a href="#">
-                    <video autoplay muted loop style="max-width: 100%; height: auto;">
-                        <source src="video/AirMax.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                </a>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md col-sm text-center justify-content-center">
-                <p class="mb-0 mt-md-5" style="font-weight: bold;">Just In</p>
-                <h1 class="" style="font-size: 4.5rem; font-weight: bold; line-height: 4rem; font-family: Futura;">NIKE AIR MAX 97<br>PROTOTYPE</h1>
-                <p>It's not just hype—it's history. An OG silhouette gets reimagined with new, reflective elements and more<br> breathability.</p>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md col-sm text-center justify-content-center">
-                <a href="#" class="btn btn-dark rounded-pill newProduct_buttonShopBlack">Shop</a>
-            </div>
-        </div>
-    </div>
-    <div class="container-fluid">
-        <div class="row" style="padding-top: 5rem !important;"><p>&nbsp;</p></div>
-    </div>
-
-    <div class="container otherProduct position-relative">
-        <div class="row">
-            <div class="col-sm col-md">
-                <h2>More Nike</h2>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-sm col-md-4 bg-image">
-                <div class="bg-image" style="background-image: url('img/Men.png');">
-                    <div class="card position-absolute" style="bottom: 6% !important;">
-                        <div class="card-body">
-                            <a href="#" class="btn btn-light rounded-pill moreProduct__buttonShop">Men's</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm col-md-4 bg-image">
-                <div class="bg-image" style="background-image: url('img/Women.png');">
-                    <div class="card position-absolute" style="bottom: 6% !important;">
-                        <div class="card-body">
-                            <a href="#" class="btn btn-light rounded-pill moreProduct__buttonShop">Women's</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm col-md-4 bg-image">
-                <div class="bg-image" style="background-image: url('img/Kid.png');">
-                    <div class="card position-absolute" style="bottom: 6% !important;">
-                        <div class="card-body">
-                            <a href="#" class="btn btn-light rounded-pill moreProduct__buttonShop">Kids'</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <div class="col-md-4">&nbsp;</div>
         </div>
     </div>
     <div class="container-fluid">
@@ -444,5 +297,6 @@
             </div>
         </div>
     </div>
+
 </body>
 </html>

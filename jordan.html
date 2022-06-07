@@ -11,48 +11,47 @@
     <script src="js/swiper-bundle.js"></script>
     <title>Jordan. Nike VN</title>
     <style>
+        html,
+        body {
+            position: relative;
+            height: 100%;
+        }
 
-    html,
-    body {
-        position: relative;
-        height: 100%;
-      }
+        a {
+            text-decoration: none;
+        }
 
-      a {
-          text-decoration: none;
-      }
+        .swiper-container {
+            width: 100%;
+            height: 100%;
+        }
 
-      .swiper-container {
-        width: 100%;
-        height: 100%;
-      }
+        .swiper-slide {
+            text-align: center;
+            font-size: 18px;
+            background: #fff;
 
-      .swiper-slide {
-        text-align: center;
-        font-size: 18px;
-        background: #fff;
+            /* Center slide text vertically */
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            -webkit-justify-content: center;
+            justify-content: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            -webkit-align-items: center;
+            align-items: center;
+        }
 
-        /* Center slide text vertically */
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: -webkit-flex;
-        display: flex;
-        -webkit-box-pack: center;
-        -ms-flex-pack: center;
-        -webkit-justify-content: center;
-        justify-content: center;
-        -webkit-box-align: center;
-        -ms-flex-align: center;
-        -webkit-align-items: center;
-        align-items: center;
-      }
-
-      .swiper-slide img {
-        display: block;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-      }
+        .swiper-slide img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
 
         .list-inline-item:not(:last-child) {
             margin-right: 1.5rem !important;
@@ -96,7 +95,7 @@
             <div class="col-md-2 offset-md-9 pt-1 pb-1 text-center" id="header__accountManagement">
                 <a href="https://www.nike.com/vn/help" style="margin-right: 0.625rem;">Help</a>
                 <span style="margin-right: 0.625rem;">|</span>
-                <a href="#" style="margin-right: 0.625rem;">Join Us</a>
+                <a href="register.html" style="margin-right: 0.625rem;">Join Us</a>
                 <span style="margin-right: 0.625rem;">|</span>
                 <a href="#" style="margin-right: 0.625rem;">Sign In</a>
             </div>
@@ -498,7 +497,7 @@
     <script>
         var swiper = new Swiper(".productSlide", {
             slidesPerView: 3,
-            spaceBetween: 30,
+            spaceBetween: 20,
             navigation: {
                 nextEl: ".swiper-button-next-unique",
                 prevEl: ".swiper-button-prev-unique",

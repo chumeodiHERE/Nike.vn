@@ -27,6 +27,14 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: TradeGothicStd;
+    src: url(../font/TradeGothicLTBold.ttf) format('truetype');
+    font-weight: bold;
+    font-style:normal;
+}
+
+
 * {
     font-family: Helveticaneue;
 }

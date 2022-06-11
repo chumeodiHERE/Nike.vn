@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/swiper-bundle.css">
+    <link rel="stylesheet" href="css/animate.css">
     <link rel="icon" type="image/x-icon" href="img/NikeFavicon.png">
     <script src="js/swiper-bundle.js"></script>
     <title>Jordan. Nike VN</title>
@@ -103,21 +104,57 @@
     </div>
 
     <!-- subheader -->
-    <div class="container-fluid" id="subheader">
+    <div class="container-fluid" id="subheader" style="position: relative !important;">
         <div class="row">
-            <div class="col-md-1 text-center pt-3 pb-1" id="subheader__logoNike">
+            <div class="col-sm col-md-1 text-center pt-3 pb-2" id="subheader__logoNike">
                 <a href="index.html"><img src="img/NikeLogo.png" alt="Nike Logo" title="Go to Nike Website" style="max-width: 60%; height: auto;"></a>
             </div>
 
-            <div class="col-md-2 offset-md-4 text-center pt-3 pb-1 subheader__sideBarMenu">
-                <ul class="list-inline">
-                    <li class="list-inline-item"><a href="MenShoe.html">Men</a></li>
-                    <li class="list-inline-item"><a href="#">Women</a></li>
-                    <li class="list-inline-item"><a href="#">Kids</a></li>
+            <div class="col-sm col-md-9 justify-content-center text-center pt-3 subheader__sideBarMenu">
+                <ul class="list-inline" style="padding-left: 6.5rem;">
+                    <li class="list-inline-item dropdown">
+                        <button class="btn" type="button" id="dropdownMenuMen" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="line-height: 0; padding: 0rem;">
+                            <a href="MenShoe.html">Men</a>
+                        </button>
+                        <script>
+                            document.getElementById("dropdownMenuMen").addEventListener("mouseover", DisplayMenMenuHover);
+                            function DisplayMenMenuHover() {
+                                document.getElementById("WomenMenu").style.display = "none"
+                                document.getElementById("KidsMenu").style.display = "none-"
+                                document.getElementById("MenMenu").style.display = "block"
+                            }
+                        </script>
+                    </li>
+                    <li class="list-inline-item dropdown">
+                        <button class="btn" type="button" id="dropdownMenuWomen" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="line-height: 0; padding: 0rem;">
+                            <a href="MenShoe.html">Women</a>
+                        </button>
+                        <script>
+                            document.getElementById("dropdownMenuWomen").addEventListener("mouseover", DisplayWomenMenuHover);
+                            function DisplayWomenMenuHover() {
+                                document.getElementById("MenMenu").style.display = "none"
+                                document.getElementById("KidsMenu").style.display = "none"
+                                document.getElementById("WomenMenu").style.display = "block"
+                            }
+                        </script>
+                    </li>
+                    <li class="list-inline-item dropdown">
+                        <button class="btn" type="button" id="dropdownMenuKids" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="line-height: 0; padding: 0rem;">
+                            <a href="MenShoe.html">Kids</a>
+                        </button>
+                        <script>
+                            document.getElementById("dropdownMenuKids").addEventListener("mouseover", DisplayKidsMenuHover);
+                            function DisplayKidsMenuHover() {
+                                document.getElementById("MenMenu").style.display = "none"
+                                document.getElementById("WomenMenu").style.display = "none"
+                                document.getElementById("KidsMenu").style.display = "block"
+                            }
+                        </script>
+                    </li>
                 </ul>
             </div>
 
-            <div class="col-md-2 offset-md-3 pt-2 pb-1">
+            <div class="col-sm col-md-2  pt-2 pb-2">
                 <div class="row d-flex justify-content-center align-items-center">
                     <div class="col-md">
                         <div>
@@ -130,8 +167,356 @@
                                     </div>
                                     <input type="search" placeholder="Search" aria-describedby="button-search" class="form-control rounded-pill subheader__search--content">
                                 </div>
-                                
                             </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Menu Of Men's Product -->
+        <div class="dropdown-content container-fluid animate__animated animate__slideInDown" aria-labelledby="dropdownMenuMen" id="MenMenu">
+            <div class="row">
+                <div class="col-md-11">&nbsp;</div>
+                <div class="col-md-1">
+                    <button id="closeMenMenuButton" type="button" class="btn rounded-circle" style="background-color: white; border: none; padding: 0.3rem 0.3rem !important;"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
+                        <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z"/>
+                      </svg></button>
+                    <script>
+                        document.getElementById("closeMenMenuButton").onclick = function() {closeMenMenu()};
+                        function closeMenMenu() {
+                            document.getElementById("MenMenu").style.display = "none"
+                        }
+                    </script>
+                </div>
+            </div>
+            <div class="row animate__animated animate__fadeInDown">
+                <div class="col-md-3" style="padding-left: 2rem;">
+                    <ul class="list-unstyled">
+                        <li class="titleOfList"><a href="#">New & Featured</a></li>
+                        <li class="ListItems"><a href="#">New Releases</a></li>
+                        <li class="ListItems"><a href="#">SNKRS Launch Calendar</a></li>
+                        <li class="ListItems"><a href="#">Member Access</a></li>
+                        <li class="ListItems"><a href="#">Air Force 1</a></li>
+                        <li class="ListItems"><a href="#">Summer Essentials</a></li>
+                        <li class="ListItems"><a href="#">Basic Essentialsr</a></li>
+                        <li class="ListItems"><a href="#">Football Club Kits</a></li>
+                        <li class="ListItems"><a href="#">Sustainable Materials</a></li>
+                        <li class="ListItems"><a href="#">Top Picks Under 2,300,000₫</a></li>
+                        <li class="ListItems"><a href="#">Last Sizes Available</a></li>
+                        <li class="ListItems"><a href="#">Sale</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-2">
+                    <ul class="list-unstyled">
+                        <li class="titleOfList"><a href="#">Shoes</a></li>
+                        <li class="ListItems"><a href="#">Newest Sneakers</a></li>
+                        <li class="ListItems"><a href="#">All Shoes</a></li>
+                        <li class="ListItems"><a href="#">Lifestyle</a></li>
+                        <li class="ListItems"><a href="#">Running</a></li>
+                        <li class="ListItems"><a href="#">Basketball</a></li>
+                        <li class="ListItems"><a href="#">Jordan</a></li>
+                        <li class="ListItems"><a href="#">Football</a></li>
+                        <li class="ListItems"><a href="#">Gym and Training</a></li>
+                        <li class="ListItems"><a href="#">Skateboarding</a></li>
+                        <li class="ListItems"><a href="#">Tennis</a></li>
+                        <li class="ListItems"><a href="#">Sandals and Slides</a></li>
+                        <li class="ListItems"><a href="#">Customise with Nike By You</a></li>
+                        <li class="ListItems"><a href="#">All Sale Shoes</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3" style="padding-left: 3rem;">
+                    <ul class="list-unstyled">
+                        <li class="titleOfList"><a href="#">Clothing</a></li>
+                        <li class="ListItems"><a href="#">All Clothing</a></li>
+                        <li class="ListItems"><a href="#">Tops and T-Shirts</a></li>
+                        <li class="ListItems"><a href="#">Jerseys and Kits</a></li>
+                        <li class="ListItems"><a href="#">Hoodies and Sweatshirts</a></li>
+                        <li class="ListItems"><a href="#">Jackets and Gilets</a></li>
+                        <li class="ListItems"><a href="#">Pants and Leggings</a></li>
+                        <li class="ListItems"><a href="#">Tracksuits</a></li>
+                        <li class="ListItems"><a href="#">Compression and Base Layer</a></li>
+                        <li class="ListItems"><a href="#">Shorts</a></li>
+                        <li class="ListItems"><a href="#">Caps</a></li>
+                        <li class="ListItems"><a href="#">Socks</a></li>
+                        <li class="ListItems"><a href="#">Bags and Backpacks</a></li>
+                        <li class="ListItems"><a href="#">Accessories and Equipment</a></li>
+                        <li class="ListItems"><a href="#">All Sale Clothing</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-2">
+                    <div class="row mb-4">
+                        <div class="col-md-12">
+                            <ul class="list-unstyled">
+                                <li class="titleOfList"><a href="#">Shop By Sport</a></li>
+                                <li class="ListItems"><a href="#">Running</a></li>
+                                <li class="ListItems"><a href="#">Football</a></li>
+                                <li class="ListItems"><a href="#">Basketball</a></li>
+                                <li class="ListItems"><a href="#">Gym and Training</a></li>
+                                <li class="ListItems"><a href="#">Yoga</a></li>
+                                <li class="ListItems"><a href="#">Skateboarding</a></li>
+                                <li class="ListItems"><a href="#">Tennis</a></li>
+                                <li class="ListItems"><a href="#">Golf</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <ul class="list-unstyled">
+                                <li class="titleOfList"><a href="#">Shop By Brand</a></li>
+                                <li class="ListItems"><a href="#">Nike Sportswear</a></li>
+                                <li class="ListItems"><a href="#">NikeLab</a></li>
+                                <li class="ListItems"><a href="#">Nike By You</a></li>
+                                <li class="ListItems"><a href="#">Jordan</a></li>
+                                <li class="ListItems"><a href="#">ACG</a></li>
+                                <li class="ListItems"><a href="#">NBA</a></li>
+                                <li class="ListItems"><a href="#">Nike SB</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <ul class="list-unstyled">
+                        <li class="titleOfList"><a href="#">Icons</a></li>
+                        <li class="ListItems"><a href="#">Air Force 1</a></li>
+                        <li class="ListItems"><a href="#">Pegasus</a></li>
+                        <li class="ListItems"><a href="#">Blazer</a></li>
+                        <li class="ListItems"><a href="#">Air Jordan 1</a></li>
+                        <li class="ListItems"><a href="#">Air Max</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Menu Of Women's Product -->
+        <div class="dropdown-content container-fluid animate__animated animate__slideInDown" aria-labelledby="dropdownMenuMen" id="WomenMenu">
+            <div class="row">
+                <div class="col-md-11">&nbsp;</div>
+                <div class="col-md-1">
+                    <button id="closeWomenMenuButton" type="button" class="btn rounded-circle" style="background-color: white; border: none; padding: 0.3rem 0.3rem !important;"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
+                        <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z"/>
+                      </svg></button>
+                    <script>
+                        document.getElementById("closeWomenMenuButton").onclick = function() {closeWomenMenu()};
+                        function closeWomenMenu() {
+                            document.getElementById("WomenMenu").style.display = "none"
+                        }
+                    </script>
+                </div>
+            </div>
+            <div class="row animate__animated animate__fadeInDown">
+                <div class="col-md-3" style="padding-left: 2rem;">
+                    <ul class="list-unstyled">
+                        <li class="titleOfList"><a href="#">New & Featured</a></li>
+                        <li class="ListItems"><a href="#">New Releases</a></li>
+                        <li class="ListItems"><a href="#">SNKRS Launch Calendar</a></li>
+                        <li class="ListItems"><a href="#">Member Access</a></li>
+                        <li class="ListItems"><a href="#">Air Force 1</a></li>
+                        <li class="ListItems"><a href="#">Summer Essentials</a></li>
+                        <li class="ListItems"><a href="#">Performance Essentials</a></li>
+                        <li class="ListItems"><a href="#">Bra and Legging Duos</a></li>
+                        <li class="ListItems"><a href="#">Sustainable Materials</a></li>
+                        <li class="ListItems"><a href="#">Top Picks Under 2,300,000₫</a></li>
+                        <li class="ListItems"><a href="#">Last Sizes Available</a></li>
+                        <li class="ListItems"><a href="#">Sale</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-2">
+                    <ul class="list-unstyled">
+                        <li class="titleOfList"><a href="#">Shoes</a></li>
+                        <li class="ListItems"><a href="#">All Shoes</a></li>
+                        <li class="ListItems"><a href="#">Lifestyle</a></li>
+                        <li class="ListItems"><a href="#">Running</a></li>
+                        <li class="ListItems"><a href="#">Gym and Training</a></li>
+                        <li class="ListItems"><a href="#">Jordan</a></li>
+                        <li class="ListItems"><a href="#">Football</a></li>
+                        <li class="ListItems"><a href="#">Basketball</a></li>
+                        <li class="ListItems"><a href="#">Skateboarding</a></li>
+                        <li class="ListItems"><a href="#">Tennis</a></li>
+                        <li class="ListItems"><a href="#">Sandals and Slides</a></li>
+                        <li class="ListItems"><a href="#">Customise with Nike By You</a></li>
+                        <li class="ListItems"><a href="#">All Sale Shoes</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3" style="padding-left: 3rem;">
+                    <ul class="list-unstyled">
+                        <li class="titleOfList"><a href="#">Clothing</a></li>
+                        <li class="ListItems"><a href="#">All Clothing</a></li>
+                        <li class="ListItems"><a href="#">Performance Essentials</a></li>
+                        <li class="ListItems"><a href="#">Sports Bras</a></li>
+                        <li class="ListItems"><a href="#">Tops and T-Shirts</a></li>
+                        <li class="ListItems"><a href="#">Hoodies and Sweatshirts</a></li>
+                        <li class="ListItems"><a href="#">PJackets and Gilets</a></li>
+                        <li class="ListItems"><a href="#">Pants and Leggings</a></li>
+                        <li class="ListItems"><a href="#">Tracksuits</a></li>
+                        <li class="ListItems"><a href="#">Compression and Base Layer</a></li>
+                        <li class="ListItems"><a href="#">Shorts</a></li>
+                        <li class="ListItems"><a href="#">Skirts and Dresses</a></li>
+                        <li class="ListItems"><a href="#">Jerseys and Kits</a></li>
+                        <li class="ListItems"><a href="#">Modest Wear</a></li>
+                        <li class="ListItems"><a href="#">Plus size</a></li>
+                        <li class="ListItems"><a href="#">Caps</a></li>
+                        <li class="ListItems"><a href="#">Socks</a></li>
+                        <li class="ListItems"><a href="#">Bags and Backpacks</a></li>
+                        <li class="ListItems"><a href="#">Accessories and Equipment</a></li>
+                        <li class="ListItems"><a href="#">All Sale Clothing</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-2">
+                    <div class="row mb-4">
+                        <div class="col-md-12">
+                            <ul class="list-unstyled">
+                                <li class="titleOfList"><a href="#">Shop By Sport</a></li>
+                                <li class="ListItems"><a href="#">Running</a></li>
+                                <li class="ListItems"><a href="#">Gym and Training</a></li>
+                                <li class="ListItems"><a href="#">Yoga</a></li>
+                                <li class="ListItems"><a href="#">Football</a></li>
+                                <li class="ListItems"><a href="#">Basketball</a></li>
+                                <li class="ListItems"><a href="#">Skateboarding</a></li>
+                                <li class="ListItems"><a href="#">Tennis</a></li>
+                                <li class="ListItems"><a href="#">Golf</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <ul class="list-unstyled">
+                                <li class="titleOfList"><a href="#">Shop By Brand</a></li>
+                                <li class="ListItems"><a href="#">Nike Sportswear</a></li>
+                                <li class="ListItems"><a href="#">NikeLab</a></li>
+                                <li class="ListItems"><a href="#">Nike By You</a></li>
+                                <li class="ListItems"><a href="#">Jordan</a></li>
+                                <li class="ListItems"><a href="#">ACG</a></li>
+                                <li class="ListItems"><a href="#">NBA</a></li>
+                                <li class="ListItems"><a href="#">Nike SB</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <ul class="list-unstyled">
+                        <li class="titleOfList"><a href="#">Icons</a></li>
+                        <li class="ListItems"><a href="#">Air Force 1</a></li>
+                        <li class="ListItems"><a href="#">Pegasus</a></li>
+                        <li class="ListItems"><a href="#">Blazer</a></li>
+                        <li class="ListItems"><a href="#">Air Jordan 1</a></li>
+                        <li class="ListItems"><a href="#">Air Max</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Menu Of Kids's Product -->
+        <div class="dropdown-content container-fluid animate__animated animate__slideInDown" aria-labelledby="dropdownMenuMen" id="KidsMenu">
+            <div class="row">
+                <div class="col-md-11">&nbsp;</div>
+                <div class="col-md-1">
+                    <button id="closeKidsMenuButton" type="button" class="btn rounded-circle" style="background-color: white; border: none; padding: 0.3rem 0.3rem !important;"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
+                        <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z"/>
+                      </svg></button>
+                    <script>
+                        document.getElementById("closeKidsMenuButton").onclick = function() {closeKidsMenu()};
+                        function closeKidsMenu() {
+                            document.getElementById("KidsMenu").style.display = "none"
+                        }
+                    </script>
+                </div>
+            </div>
+            <div class="row animate__animated animate__fadeInDown">
+                <div class="col-md-3" style="padding-left: 2rem;">
+                    <ul class="list-unstyled">
+                        <li class="titleOfList"><a href="#">New & Featured</a></li>
+                        <li class="ListItems"><a href="#">New Releases</a></li>
+                        <li class="ListItems"><a href="#">Member Access</a></li>
+                        <li class="ListItems"><a href="#">Air Force 1</a></li>
+                        <li class="ListItems"><a href="#">Summer Essentials</a></li>
+                        <li class="ListItems"><a href="#">Bags and Backpacks</a></li>
+                        <li class="ListItems"><a href="#">Jordan</a></li>
+                        <li class="ListItems"><a href="#">Last Sizes Available</a></li>
+                        <li class="ListItems"><a href="#">Sale</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <div class="row mb-4">
+                        <div class="col-md-12">
+                            <ul class="list-unstyled">
+                                <li class="titleOfList"><a href="#">Boys' Shoes</a></li>
+                                <li class="ListItems"><a href="#">Older Kids (3-6.5)</a></li>
+                                <li class="ListItems"><a href="#">Younger Kids (10-2.5)</a></li>
+                                <li class="ListItems"><a href="#">Baby and Toddler (1.5-9.5)</a></li>
+                                <li class="ListItems"><a href="#">Lifestyle</a></li>
+                                <li class="ListItems"><a href="#">Running</a></li>
+                                <li class="ListItems"><a href="#">Basketball</a></li>
+                                <li class="ListItems"><a href="#">Jordan</a></li>
+                                <li class="ListItems"><a href="#">Football</a></li>
+                                <li class="ListItems"><a href="#">Sandals and Slides</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <ul class="list-unstyled">
+                                <li class="titleOfList"><a href="#">Boys' Clothing</a></li>
+                                <li class="ListItems"><a href="#">Tops and T-Shirts</a></li>
+                                <li class="ListItems"><a href="#">Hoodies and Sweatshirts</a></li>
+                                <li class="ListItems"><a href="#">Pants and Leggings</a></li>
+                                <li class="ListItems"><a href="#">Shorts</a></li>
+                                <li class="ListItems"><a href="#">All Boys' Clothing</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="row mb-4">
+                        <div class="col-md-12">
+                            <ul class="list-unstyled">
+                                <li class="titleOfList"><a href="#">Girls' Shoes</a></li>
+                                <li class="ListItems"><a href="#">Older Kids (3-6.5)</a></li>
+                                <li class="ListItems"><a href="#">Younger Kids (10-2.5)</a></li>
+                                <li class="ListItems"><a href="#">Baby and Toddler (1.5-9.5)</a></li>
+                                <li class="ListItems"><a href="#">Lifestyle</a></li>
+                                <li class="ListItems"><a href="#">Running</a></li>
+                                <li class="ListItems"><a href="#">Basketball</a></li>
+                                <li class="ListItems"><a href="#">Football</a></li>
+                                <li class="ListItems"><a href="#">Sandals and Slides</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <ul class="list-unstyled">
+                                <li class="titleOfList"><a href="#">Girls' Clothing</a></li>
+                                <li class="ListItems"><a href="#">Tops and T-Shirts</a></li>
+                                <li class="ListItems"><a href="#">Hoodies and Sweatshirts</a></li>
+                                <li class="ListItems"><a href="#">Pants and Leggings</a></li>
+                                <li class="ListItems"><a href="#">Shorts</a></li>
+                                <li class="ListItems"><a href="#">All Girls' Clothing</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="row mb-4">
+                        <div class="col-md-12">
+                            <ul class="list-unstyled">
+                                <li class="titleOfList"><a href="#">Accessories and Equipment</a></li>
+                                <li class="ListItems"><a href="#">Balls</a></li>
+                                <li class="ListItems"><a href="#">Bags and Backpacks</a></li>
+                                <li class="ListItems"><a href="#">Socks</a></li>
+                                <li class="ListItems"><a href="#">Hats and Headwear</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <ul class="list-unstyled">
+                                <li class="titleOfList"><a href="#">Shop By Sport</a></li>
+                                <li class="ListItems"><a href="#">Running</a></li>
+                                <li class="ListItems"><a href="#">Football</a></li>
+                                <li class="ListItems"><a href="#">Basketball</a></li>
+                                <li class="ListItems"><a href="#">Gym and Training</a></li>
+                                <li class="ListItems"><a href="#">Tennis</a></li>
+                            </ul>
                         </div>
                     </div>
                 </div>

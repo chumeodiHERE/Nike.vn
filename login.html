@@ -87,6 +87,20 @@
         ::-ms-input-placeholder { /* Microsoft Edge */
             color: #ced4da;
         }
+
+        #displayEmailWarning {
+            display: none;
+            color: red;
+            font-size: 0.7rem;
+        }
+
+        #displayPassWarning {
+            display: none;
+            color: red;
+            font-size: 0.7rem;
+        }
+
+
     </style>
 </head>
 <body>
@@ -539,14 +553,16 @@
                 </div>
                 <div class="row">
                     <div class="col-md">
-                        <form action="">
+                        <form name="signin" action="">
                             <div class="row" style="width: 90%; margin: 0 auto;">
                                 <div class="col-12 mt-2">
-                                    <input type="email" id="formEmail" class="form-control" placeholder="Email address" style="border-left: 1px solid #ced4da !important; border-right: 1px solid #ced4da !important;" />
+                                    <input name="Email" type="email" id="formEmail" class="form-control" placeholder="Email address" style="border: solid 1px #ced4da !important;" />
+                                    <p id="displayEmailWarning" class="mt-2"></p>
                                 </div>
                                 
                                 <div class="col-12 mt-4">
-                                    <input type="password" id="formPass" class="form-control" placeholder="Password" style="border-left: 1px solid #ced4da !important; border-right: 1px solid #ced4da !important;" />
+                                    <input name="Password" type="password" id="formPass" class="form-control" placeholder="Password" style="border: solid 1px #ced4da !important;"/>
+                                    <p id="displayPassWarning" class="mt-2"></p>
                                 </div>
 
                                 <div class="col-12 mt-4 position-relative" style="margin-bottom: 1.5rem !important;">
@@ -568,7 +584,7 @@
                                 </div>
 
                                 <div class="col-12 mt-3 justify-content-center">
-                                    <button type="submit" class="btn btn-dark" style="width: 100%; height: auto;"><span style="font-family: TradeGothicStd;">SIGN IN</span></button>
+                                    <button id="buttonSignIn" type="submit" class="btn btn-dark" style="width: 100%; height: auto;"><span style="font-family: TradeGothicStd;">SIGN IN</span></button>
                                 </div>
 
                                 <div class="col-12 mt-3 text-center">
@@ -578,6 +594,51 @@
                         </form>
                     </div>
                 </div>
+                <script>
+                    //Hàm sài chung
+                    function checkEmptyInput(formName, inputName) {
+                        var input = document.forms[formName][inputName].value;
+                        if (input == null || input == "") {return true;}
+                        else {return false;}
+                    }
+
+                    // Check email
+                    document.getElementById("formEmail").addEventListener("focusout", checkEmail)
+                    function checkEmail() {
+                        if (checkEmptyInput("signin", "Email") == true) {
+                            document.getElementById("displayEmailWarning").style.display = "block";
+                            document.getElementById("displayEmailWarning").innerHTML = "Plese enter a valid email address."
+                            document.getElementById("formEmail").style.setProperty('border', 'solid 1px red', 'important');
+                        } else {
+                            document.getElementById("displayEmailWarning").style.display = "none";
+                            document.getElementById("formEmail").style.setProperty('border', 'solid 1px #ced4da', 'important');
+                        }
+                    }
+
+                    // Check password
+                    document.getElementById("formPass").addEventListener("focusout", checkPassWord)
+                    function checkPassWord() {
+                        if (checkEmptyInput("signin", "Password") == true) {
+                            document.getElementById("displayPassWarning").style.display = "block";
+                            document.getElementById("displayPassWarning").innerHTML = "Password does not meet minimum requirements."
+                            document.getElementById("formPass").style.setProperty('border', 'solid 1px red', 'important');
+                        } else {
+                            document.getElementById("displayPassWarning").style.display = "none";
+                            document.getElementById("formPass").style.setProperty('border', 'solid 1px #ced4da', 'important');
+                        }
+                    }
+
+                    //Check button full form before submit
+                    document.getElementById("buttonSignIn").onclick = function() {checkAllForm()};
+                    function checkAllForm()
+                    {
+                        if (checkEmptyInput("signin", "Email") == false && checkEmptyInput("signin", "Password")== false) {
+                            alert("SIGN IN SUCCESSFULLY!!!");
+                        } else {
+                            alert("Please fill full the Email or Pasword!!");
+                        }
+                    }
+                </script>
             </div>
             <div class="col-md-4">&nbsp;</div>
         </div>

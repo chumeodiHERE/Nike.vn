@@ -87,6 +87,42 @@
         ::-ms-input-placeholder { /* Microsoft Edge */
             color: #ced4da;
         }
+
+        #displayEmailWarning {
+            display: none;
+            color: red;
+            font-size: 0.7rem;
+        }
+
+        #displayPassRequireMent {
+            display: none;
+            font-size: 0.7rem;
+            color: gray;
+        }
+        
+        #displayPassWarning {
+            display: none;
+            color: red;
+            font-size: 0.7rem;
+        }
+
+        #displayfirstnameWarning {
+            display: none;
+            color: red;
+            font-size: 0.7rem;
+        }
+
+        #displaylastnameWarning {
+            display: none;
+            color: red;
+            font-size: 0.7rem;
+        }
+
+        #displaybirthdayWarning {
+            display: none;
+            color: red;
+            font-size: 0.7rem;
+        }
     </style>
 </head>
 <body>
@@ -540,26 +576,37 @@
                 </div>
                 <div class="row">
                     <div class="col-md">
-                        <form action="">
+                        <form name="register" action="">
                             <div class="row" style="width: 90%; margin: 0 auto;">
                                 <div class="col-12 mt-4">
-                                    <input type="email" id="formEmail" class="form-control" placeholder="Email address" style="border-left: 1px solid #ced4da !important; border-right: 1px solid #ced4da !important;" />
+                                    <input name="Email" type="email" id="formEmail" class="form-control" placeholder="Email address" style="border: solid 1px #ced4da !important;" />
+                                    <p id="displayEmailWarning" class="mt-2"></p>
                                 </div>
                                 
                                 <div class="col-12 mt-4">
-                                    <input type="password" id="formPass" class="form-control" placeholder="Password" style="border-left: 1px solid #ced4da !important; border-right: 1px solid #ced4da !important;" />
+                                    <input name="Password" type="password" id="formPass" class="form-control" placeholder="Password" style="border: solid 1px #ced4da !important;"/>
+                                    <p id="displayPassWarning" class="mt-2"></p>
+                                    <ul class="list-unstyled mt-2" id="displayPassRequireMent">
+                                        <li id="min8chac">Minimum of 8 characters</li>
+                                        <li id="upword">1 uppercase letter</li>
+                                        <li id="lowword">1 lowercase letter</li>
+                                        <li id="num">1 number</li>
+                                    </ul>
                                 </div>
 
                                 <div class="col-12 mt-4">
-                                    <input type="text" id="formFirstName" class="form-control" placeholder="First Name" style="border-left: 1px solid #ced4da !important; border-right: 1px solid #ced4da !important;" />
+                                    <input name="firstname" type="text" id="formFirstName" class="form-control" placeholder="First Name" style="border: solid 1px #ced4da !important;" />
+                                    <p id="displayfirstnameWarning" class="mt-2"></p>
                                 </div>
 
                                 <div class="col-12 mt-4">
-                                    <input type="text" id="formLasttName" class="form-control" placeholder="Last Name" style="border-left: 1px solid #ced4da !important; border-right: 1px solid #ced4da !important;" />
+                                    <input name="lastname" type="text" id="formLasttName" class="form-control" placeholder="Last Name" style="border: solid 1px #ced4da !important;" />
+                                    <p id="displaylastnameWarning" class="mt-2"></p>
                                 </div>
 
                                 <div class="col-12 mt-4 text-center">
-                                    <input type="date" id="formDoB" class="form-control" placeholder="Date of Birth" style="border-left: 1px solid #ced4da !important; border-right: 1px solid #ced4da !important;" />
+                                    <input name="birthday" type="date" id="formDoB" class="form-control" placeholder="Date of Birth" style="border: solid 1px #ced4da !important;" />
+                                    <p id="displaybirthdayWarning" class="mt-2"></p>
                                     <p style="font-size: small; color: rgb(141, 141, 141);">Get a Nike Member Reward every year on your Birthday.</p>
                                 </div>
 
@@ -600,7 +647,7 @@
                                 </div>
 
                                 <div class="col-12 mt-5 justify-content-center">
-                                    <button type="submit" class="btn btn-dark" style="width: 100%; height: auto;"><span style="font-family: TradeGothicStd;">JOIN US</span></button>
+                                    <button id="buttonRegister" type="submit" class="btn btn-dark" style="width: 100%; height: auto;"><span style="font-family: TradeGothicStd;">JOIN US</span></button>
                                 </div>
 
                                 <div class="col-12 mt-3 text-center">
@@ -610,6 +657,168 @@
                         </form>
                     </div>
                 </div>
+                <script>
+                    //Hàm sài chung
+                    function checkEmptyInput(formName, inputName) {
+                        var input = document.forms[formName][inputName].value;
+                        if (input == null || input == "") {return true;}
+                        else {return false;}
+                    }
+                    // Check email
+                    document.getElementById("formEmail").addEventListener("focusout", checkEmail)
+                    function checkEmailFormat() {
+                        var email = document.forms["register"]["Email"].value;
+                        var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+                        if (email.match(mailformat)) { return true; }
+                        else { return false; }
+                    }
+                    function checkEmail() {
+                        if (checkEmptyInput("register", "Email") == true) {
+                            document.getElementById("displayEmailWarning").style.display = "block";
+                            document.getElementById("displayEmailWarning").innerHTML = "Plese enter a valid email address."
+                            document.getElementById("formEmail").style.setProperty('border', 'solid 1px red', 'important');
+                        } else {
+                            if (checkEmailFormat() == true)
+                            {
+                                document.getElementById("displayEmailWarning").style.display = "none";
+                                document.getElementById("formEmail").style.setProperty('border', 'solid 1px #ced4da', 'important');
+                            } else
+                            {
+                                document.getElementById("displayEmailWarning").style.display = "block";
+                                document.getElementById("displayEmailWarning").innerHTML = "Plese enter a valid email address."
+                                document.getElementById("formEmail").style.setProperty('border', 'solid 1px red', 'important');
+                            }
+                        }
+                    }
+
+
+                    // Check password
+                    document.getElementById("formPass").addEventListener("focusout", checkPassWord)
+                    document.getElementById("formPass").oninput = function() {checkPassWord()};
+                    document.getElementById("formPass").focus = function() {checkPassWord()};
+                    function checkPasswordFormat() {
+                        var pass = document.getElementById("formPass");
+                        // Validate length
+                        var lengthLetter = false;
+                        if(pass.value.length >= 8) {
+                            lengthLetter = true;
+                            document.getElementById("min8chac").style.setProperty('color', 'black', 'important');
+                        } else {
+                            lengthLetter = false;
+                            document.getElementById("min8chac").style.setProperty('color', 'gray', 'important');
+                        }
+
+                        // Validate Upcase letters
+                        var upperCaseLetters = /[A-Z]/g;
+                        var upcasebool = false;
+                        if(pass.value.match(upperCaseLetters)) {  
+                            upcasebool = true;
+                            document.getElementById("upword").style.setProperty('color', 'black', 'important');
+                        } else {
+                            upcasebool = false;
+                            document.getElementById("upword").style.setProperty('color', 'gray', 'important');
+                        }
+
+                        // Validate Lowcase letters
+                        var lowerCaseLetters = /[a-z]/g;
+                        var lowcasebool = false;
+                        if(pass.value.match(lowerCaseLetters)) {  
+                            lowcasebool = true;
+                            document.getElementById("lowword").style.setProperty('color', 'black', 'important');
+                        } else {
+                            lowcasebool = false;
+                            document.getElementById("lowword").style.setProperty('color', 'gray', 'important');
+                        }
+
+                        // Validate numbers
+                        var numbers = /[0-9]/g;
+                        var numbersbool = false;
+                        if(pass.value.match(numbers)) {
+                            numbersbool = true;
+                            document.getElementById("num").style.setProperty('color', 'black', 'important');
+                        } else {
+                            numbersbool = false;
+                            document.getElementById("num").style.setProperty('color', 'gray', 'important');
+                        }
+
+                        if (lengthLetter == true && upcasebool == true && lowcasebool == true && numbersbool == true)
+                        {return true;}
+                        return false;
+                    }
+                    function checkPassWord() {
+                        if (checkEmptyInput("register", "Password") == true) {
+                            document.getElementById("displayPassWarning").style.display = "block";
+                            document.getElementById("displayPassWarning").innerHTML = "Password does not meet minimum requirements."
+                            document.getElementById("formPass").style.setProperty('border', 'solid 1px red', 'important');
+                            document.getElementById("displayPassRequireMent").style.display = "none";
+                        } else {
+                            if (checkPasswordFormat() == false)
+                            {
+                                document.getElementById("displayPassWarning").style.display = "block";
+                                document.getElementById("displayPassWarning").innerHTML = "Password does not meet minimum requirements."
+                                document.getElementById("formPass").style.setProperty('border', 'solid 1px red', 'important');
+                                document.getElementById("displayPassRequireMent").style.display = "block";
+                            } else {
+                                document.getElementById("formPass").style.setProperty('border', 'solid 1px #ced4da', 'important');
+                                document.getElementById("displayPassWarning").style.display = "none";
+                                if (checkEmptyInput("register", "Password") == true) {
+                                    document.getElementById("displayPassRequireMent").style.display = "none";
+                                } else {
+                                    document.getElementById("displayPassRequireMent").style.display = "block";
+                                }
+                            }
+                        }
+                    }
+
+                    //Check Tên
+                    document.getElementById("formFirstName").addEventListener("focusout", checkFirstName)
+                    document.getElementById("formLasttName").addEventListener("focusout", checkLasttName)
+
+                    function checkFirstName() {
+                        if (checkEmptyInput("register", "firstname") == true) {
+                            document.getElementById("displayfirstnameWarning").style.display = "block";
+                            document.getElementById("displayfirstnameWarning").innerHTML = "Please enter a valid first name."
+                            document.getElementById("formFirstName").style.setProperty('border', 'solid 1px red', 'important');
+                        } else {
+                            document.getElementById("displayfirstnameWarning").style.display = "none";
+                            document.getElementById("formFirstName").style.setProperty('border', 'solid 1px #ced4da', 'important');
+                        }
+                    }
+                    function checkLasttName() {
+                        if (checkEmptyInput("register", "lastname") == true) {
+                            document.getElementById("displaylastnameWarning").style.display = "block";
+                            document.getElementById("displaylastnameWarning").innerHTML = "Please enter a valid last name."
+                            document.getElementById("formLasttName").style.setProperty('border', 'solid 1px red', 'important');
+                        } else {
+                            document.getElementById("displaylastnameWarning").style.display = "none";
+                            document.getElementById("formLasttName").style.setProperty('border', 'solid 1px #ced4da', 'important');
+                        }
+                    }
+
+                    //Check ngày sinh
+                    document.getElementById("formDoB").addEventListener("focusout", checkDoB)
+                    function checkDoB() {
+                        if (checkEmptyInput("register", "birthday") == true) {
+                            document.getElementById("displaybirthdayWarning").style.display = "block";
+                            document.getElementById("displaybirthdayWarning").innerHTML = "Please enter a valid date of birth."
+                            document.getElementById("formDoB").style.setProperty('border', 'solid 1px red', 'important');
+                        } else {
+                            document.getElementById("displaybirthdayWarning").style.display = "none";
+                            document.getElementById("formDoB").style.setProperty('border', 'solid 1px #ced4da', 'important');
+                        }
+                    }
+
+                    //Check button full form before submit
+                    document.getElementById("buttonRegister").onclick = function() {checkAllForm()};
+                    function checkAllForm()
+                    {
+                        if (checkEmptyInput("register", "Email") == false && checkEmptyInput("register", "Password") == false && checkEmptyInput("register", "firstname") == false && checkEmptyInput("register", "lastname") == false && checkEmptyInput("register", "birthday") == false) {
+                            alert("SIGN UP SUCCESSFULLY!!!");
+                        } else {
+                            alert("Please fill full the information!!");
+                        }
+                    }
+                </script>
             </div>
             <div class="col-md-4">&nbsp;</div>
         </div>

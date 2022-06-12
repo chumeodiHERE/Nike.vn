@@ -8,7 +8,7 @@
 	<link rel="stylesheet" href="css/style.css">
 	<link rel="stylesheet" href="css/animate.css">
 	<link rel="icon" type="image/x-icon" href="img/NikeFavicon.png">
-	<title>Men's Shoes. Nike VN</title>
+	<title>Men's shoes. Nike VN</title>
 	<style>
         .list-inline-item:not(:last-child) {
             margin-right: 1.5rem !important;
@@ -71,6 +71,18 @@
             height: 100%;
             object-fit: cover;
         }
+		#size
+		{
+			border:1px solid #000;
+			padding-left:45px;
+			border-radius:10px;
+		}
+		#size:hover
+		{
+			border:1px solid #FF0;
+            font-weight:bold;
+			background:rgb(153,153,153);
+		}
     </style>
 </head>
 <body>
@@ -92,21 +104,57 @@
     </div>
 
 	<!-- subheader -->
-    <div class="container-fluid" id="subheader">
+    <div class="container-fluid" id="subheader" style="position: relative !important;">
         <div class="row">
-            <div class="col-sm col-md-1 text-center pt-3 pb-1" id="subheader__logoNike">
+            <div class="col-sm col-md-1 text-center pt-3 pb-2" id="subheader__logoNike">
                 <a href="index.html"><img src="img/NikeLogo.png" alt="Nike Logo" title="Go to Nike Website" style="max-width: 60%; height: auto;"></a>
             </div>
 
-            <div class="col-sm col-md-2 offset-md-4 text-center pt-3 pb-1 subheader__sideBarMenu">
-                <ul class="list-inline">
-                    <li class="list-inline-item"><a href="#">Men</a></li>
-                    <li class="list-inline-item"><a href="#">Women</a></li>
-                    <li class="list-inline-item"><a href="#">Kids</a></li>
+            <div class="col-sm col-md-9 justify-content-center text-center pt-3 subheader__sideBarMenu">
+                <ul class="list-inline" style="padding-left: 6.5rem;">
+                    <li class="list-inline-item dropdown">
+                        <button class="btn" type="button" id="dropdownMenuMen" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="line-height: 0; padding: 0rem;">
+                            <a href="MenShoe.html">Men</a>
+                        </button>
+                        <script>
+                            document.getElementById("dropdownMenuMen").addEventListener("mouseover", DisplayMenMenuHover);
+                            function DisplayMenMenuHover() {
+                                document.getElementById("WomenMenu").style.display = "none"
+                                document.getElementById("KidsMenu").style.display = "none"
+                                document.getElementById("MenMenu").style.display = "block"
+                            }
+                        </script>
+                    </li>
+                    <li class="list-inline-item dropdown">
+                        <button class="btn" type="button" id="dropdownMenuWomen" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="line-height: 0; padding: 0rem;">
+                            <a href="Woman.html">Women</a>
+                        </button>
+                        <script>
+                            document.getElementById("dropdownMenuWomen").addEventListener("mouseover", DisplayWomenMenuHover);
+                            function DisplayWomenMenuHover() {
+                                document.getElementById("MenMenu").style.display = "none"
+                                document.getElementById("KidsMenu").style.display = "none"
+                                document.getElementById("WomenMenu").style.display = "block"
+                            }
+                        </script>
+                    </li>
+                    <li class="list-inline-item dropdown">
+                        <button class="btn" type="button" id="dropdownMenuKids" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="line-height: 0; padding: 0rem;">
+                            <a href="Boyshort.html">Kids</a>
+                        </button>
+                        <script>
+                            document.getElementById("dropdownMenuKids").addEventListener("mouseover", DisplayKidsMenuHover);
+                            function DisplayKidsMenuHover() {
+                                document.getElementById("MenMenu").style.display = "none"
+                                document.getElementById("WomenMenu").style.display = "none"
+                                document.getElementById("KidsMenu").style.display = "block"
+                            }
+                        </script>
+                    </li>
                 </ul>
             </div>
 
-            <div class="col-sm col-md-2 offset-md-3 pt-2 pb-1">
+            <div class="col-sm col-md-2  pt-2 pb-2">
                 <div class="row d-flex justify-content-center align-items-center">
                     <div class="col-md">
                         <div>
@@ -125,13 +173,362 @@
                 </div>
             </div>
         </div>
+
+        <!-- Menu Of Men's Product -->
+        <div class="dropdown-content container-fluid" aria-labelledby="dropdownMenuMen" id="MenMenu">
+            <div class="row">
+                <div class="col-md-11">&nbsp;</div>
+                <div class="col-md-1">
+                    <button id="closeMenMenuButton" type="button" class="btn rounded-circle" style="background-color: white; border: none; padding: 0.3rem 0.3rem !important;"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
+                        <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z"/>
+                      </svg></button>
+                    <script>
+                        document.getElementById("closeMenMenuButton").onclick = function() {closeMenMenu()};
+                        function closeMenMenu() {
+                            document.getElementById("MenMenu").style.display = "none"
+                        }
+                    </script>
+                </div>
+            </div>
+            <div class="row animate__animated animate__fadeInDown">
+                <div class="col-md-3" style="padding-left: 2rem;">
+                    <ul class="list-unstyled">
+                        <li class="titleOfList"><a href="#">New & Featured</a></li>
+                        <li class="ListItems"><a href="#">New Releases</a></li>
+                        <li class="ListItems"><a href="#">SNKRS Launch Calendar</a></li>
+                        <li class="ListItems"><a href="#">Member Access</a></li>
+                        <li class="ListItems"><a href="#">Air Force 1</a></li>
+                        <li class="ListItems"><a href="#">Summer Essentials</a></li>
+                        <li class="ListItems"><a href="#">Basic Essentialsr</a></li>
+                        <li class="ListItems"><a href="#">Football Club Kits</a></li>
+                        <li class="ListItems"><a href="#">Sustainable Materials</a></li>
+                        <li class="ListItems"><a href="#">Top Picks Under 2,300,000₫</a></li>
+                        <li class="ListItems"><a href="#">Last Sizes Available</a></li>
+                        <li class="ListItems"><a href="#">Sale</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-2">
+                    <ul class="list-unstyled">
+                        <li class="titleOfList"><a href="#">Shoes</a></li>
+                        <li class="ListItems"><a href="#">Newest Sneakers</a></li>
+                        <li class="ListItems"><a href="#">All Shoes</a></li>
+                        <li class="ListItems"><a href="#">Lifestyle</a></li>
+                        <li class="ListItems"><a href="#">Running</a></li>
+                        <li class="ListItems"><a href="#">Basketball</a></li>
+                        <li class="ListItems"><a href="#">Jordan</a></li>
+                        <li class="ListItems"><a href="#">Football</a></li>
+                        <li class="ListItems"><a href="#">Gym and Training</a></li>
+                        <li class="ListItems"><a href="#">Skateboarding</a></li>
+                        <li class="ListItems"><a href="#">Tennis</a></li>
+                        <li class="ListItems"><a href="#">Sandals and Slides</a></li>
+                        <li class="ListItems"><a href="#">Customise with Nike By You</a></li>
+                        <li class="ListItems"><a href="#">All Sale Shoes</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3" style="padding-left: 3rem;">
+                    <ul class="list-unstyled">
+                        <li class="titleOfList"><a href="#">Clothing</a></li>
+                        <li class="ListItems"><a href="#">All Clothing</a></li>
+                        <li class="ListItems"><a href="#">Tops and T-Shirts</a></li>
+                        <li class="ListItems"><a href="#">Jerseys and Kits</a></li>
+                        <li class="ListItems"><a href="#">Hoodies and Sweatshirts</a></li>
+                        <li class="ListItems"><a href="#">Jackets and Gilets</a></li>
+                        <li class="ListItems"><a href="#">Pants and Leggings</a></li>
+                        <li class="ListItems"><a href="#">Tracksuits</a></li>
+                        <li class="ListItems"><a href="#">Compression and Base Layer</a></li>
+                        <li class="ListItems"><a href="#">Shorts</a></li>
+                        <li class="ListItems"><a href="#">Caps</a></li>
+                        <li class="ListItems"><a href="#">Socks</a></li>
+                        <li class="ListItems"><a href="#">Bags and Backpacks</a></li>
+                        <li class="ListItems"><a href="#">Accessories and Equipment</a></li>
+                        <li class="ListItems"><a href="#">All Sale Clothing</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-2">
+                    <div class="row mb-4">
+                        <div class="col-md-12">
+                            <ul class="list-unstyled">
+                                <li class="titleOfList"><a href="#">Shop By Sport</a></li>
+                                <li class="ListItems"><a href="#">Running</a></li>
+                                <li class="ListItems"><a href="#">Football</a></li>
+                                <li class="ListItems"><a href="#">Basketball</a></li>
+                                <li class="ListItems"><a href="#">Gym and Training</a></li>
+                                <li class="ListItems"><a href="#">Yoga</a></li>
+                                <li class="ListItems"><a href="#">Skateboarding</a></li>
+                                <li class="ListItems"><a href="#">Tennis</a></li>
+                                <li class="ListItems"><a href="#">Golf</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <ul class="list-unstyled">
+                                <li class="titleOfList"><a href="#">Shop By Brand</a></li>
+                                <li class="ListItems"><a href="#">Nike Sportswear</a></li>
+                                <li class="ListItems"><a href="#">NikeLab</a></li>
+                                <li class="ListItems"><a href="#">Nike By You</a></li>
+                                <li class="ListItems"><a href="#">Jordan</a></li>
+                                <li class="ListItems"><a href="#">ACG</a></li>
+                                <li class="ListItems"><a href="#">NBA</a></li>
+                                <li class="ListItems"><a href="#">Nike SB</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <ul class="list-unstyled">
+                        <li class="titleOfList"><a href="#">Icons</a></li>
+                        <li class="ListItems"><a href="#">Air Force 1</a></li>
+                        <li class="ListItems"><a href="#">Pegasus</a></li>
+                        <li class="ListItems"><a href="#">Blazer</a></li>
+                        <li class="ListItems"><a href="#">Air Jordan 1</a></li>
+                        <li class="ListItems"><a href="#">Air Max</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Menu Of Women's Product -->
+        <div class="dropdown-content container-fluid" aria-labelledby="dropdownMenuMen" id="WomenMenu">
+            <div class="row">
+                <div class="col-md-11">&nbsp;</div>
+                <div class="col-md-1">
+                    <button id="closeWomenMenuButton" type="button" class="btn rounded-circle" style="background-color: white; border: none; padding: 0.3rem 0.3rem !important;"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
+                        <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z"/>
+                      </svg></button>
+                    <script>
+                        document.getElementById("closeWomenMenuButton").onclick = function() {closeWomenMenu()};
+                        function closeWomenMenu() {
+                            document.getElementById("WomenMenu").style.display = "none"
+                        }
+                    </script>
+                </div>
+            </div>
+            <div class="row animate__animated animate__fadeInDown">
+                <div class="col-md-3" style="padding-left: 2rem;">
+                    <ul class="list-unstyled">
+                        <li class="titleOfList"><a href="#">New & Featured</a></li>
+                        <li class="ListItems"><a href="#">New Releases</a></li>
+                        <li class="ListItems"><a href="#">SNKRS Launch Calendar</a></li>
+                        <li class="ListItems"><a href="#">Member Access</a></li>
+                        <li class="ListItems"><a href="#">Air Force 1</a></li>
+                        <li class="ListItems"><a href="#">Summer Essentials</a></li>
+                        <li class="ListItems"><a href="#">Performance Essentials</a></li>
+                        <li class="ListItems"><a href="#">Bra and Legging Duos</a></li>
+                        <li class="ListItems"><a href="#">Sustainable Materials</a></li>
+                        <li class="ListItems"><a href="#">Top Picks Under 2,300,000₫</a></li>
+                        <li class="ListItems"><a href="#">Last Sizes Available</a></li>
+                        <li class="ListItems"><a href="#">Sale</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-2">
+                    <ul class="list-unstyled">
+                        <li class="titleOfList"><a href="#">Shoes</a></li>
+                        <li class="ListItems"><a href="#">All Shoes</a></li>
+                        <li class="ListItems"><a href="#">Lifestyle</a></li>
+                        <li class="ListItems"><a href="#">Running</a></li>
+                        <li class="ListItems"><a href="#">Gym and Training</a></li>
+                        <li class="ListItems"><a href="#">Jordan</a></li>
+                        <li class="ListItems"><a href="#">Football</a></li>
+                        <li class="ListItems"><a href="#">Basketball</a></li>
+                        <li class="ListItems"><a href="#">Skateboarding</a></li>
+                        <li class="ListItems"><a href="#">Tennis</a></li>
+                        <li class="ListItems"><a href="#">Sandals and Slides</a></li>
+                        <li class="ListItems"><a href="#">Customise with Nike By You</a></li>
+                        <li class="ListItems"><a href="#">All Sale Shoes</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3" style="padding-left: 3rem;">
+                    <ul class="list-unstyled">
+                        <li class="titleOfList"><a href="#">Clothing</a></li>
+                        <li class="ListItems"><a href="#">All Clothing</a></li>
+                        <li class="ListItems"><a href="#">Performance Essentials</a></li>
+                        <li class="ListItems"><a href="#">Sports Bras</a></li>
+                        <li class="ListItems"><a href="#">Tops and T-Shirts</a></li>
+                        <li class="ListItems"><a href="#">Hoodies and Sweatshirts</a></li>
+                        <li class="ListItems"><a href="#">PJackets and Gilets</a></li>
+                        <li class="ListItems"><a href="#">Pants and Leggings</a></li>
+                        <li class="ListItems"><a href="#">Tracksuits</a></li>
+                        <li class="ListItems"><a href="#">Compression and Base Layer</a></li>
+                        <li class="ListItems"><a href="#">Shorts</a></li>
+                        <li class="ListItems"><a href="#">Skirts and Dresses</a></li>
+                        <li class="ListItems"><a href="#">Jerseys and Kits</a></li>
+                        <li class="ListItems"><a href="#">Modest Wear</a></li>
+                        <li class="ListItems"><a href="#">Plus size</a></li>
+                        <li class="ListItems"><a href="#">Caps</a></li>
+                        <li class="ListItems"><a href="#">Socks</a></li>
+                        <li class="ListItems"><a href="#">Bags and Backpacks</a></li>
+                        <li class="ListItems"><a href="#">Accessories and Equipment</a></li>
+                        <li class="ListItems"><a href="#">All Sale Clothing</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-2">
+                    <div class="row mb-4">
+                        <div class="col-md-12">
+                            <ul class="list-unstyled">
+                                <li class="titleOfList"><a href="#">Shop By Sport</a></li>
+                                <li class="ListItems"><a href="#">Running</a></li>
+                                <li class="ListItems"><a href="#">Gym and Training</a></li>
+                                <li class="ListItems"><a href="#">Yoga</a></li>
+                                <li class="ListItems"><a href="#">Football</a></li>
+                                <li class="ListItems"><a href="#">Basketball</a></li>
+                                <li class="ListItems"><a href="#">Skateboarding</a></li>
+                                <li class="ListItems"><a href="#">Tennis</a></li>
+                                <li class="ListItems"><a href="#">Golf</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <ul class="list-unstyled">
+                                <li class="titleOfList"><a href="#">Shop By Brand</a></li>
+                                <li class="ListItems"><a href="#">Nike Sportswear</a></li>
+                                <li class="ListItems"><a href="#">NikeLab</a></li>
+                                <li class="ListItems"><a href="#">Nike By You</a></li>
+                                <li class="ListItems"><a href="#">Jordan</a></li>
+                                <li class="ListItems"><a href="#">ACG</a></li>
+                                <li class="ListItems"><a href="#">NBA</a></li>
+                                <li class="ListItems"><a href="#">Nike SB</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <ul class="list-unstyled">
+                        <li class="titleOfList"><a href="#">Icons</a></li>
+                        <li class="ListItems"><a href="#">Air Force 1</a></li>
+                        <li class="ListItems"><a href="#">Pegasus</a></li>
+                        <li class="ListItems"><a href="#">Blazer</a></li>
+                        <li class="ListItems"><a href="#">Air Jordan 1</a></li>
+                        <li class="ListItems"><a href="#">Air Max</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Menu Of Kids's Product -->
+        <div class="dropdown-content container-fluid" aria-labelledby="dropdownMenuMen" id="KidsMenu">
+            <div class="row">
+                <div class="col-md-11">&nbsp;</div>
+                <div class="col-md-1">
+                    <button id="closeKidsMenuButton" type="button" class="btn rounded-circle" style="background-color: white; border: none; padding: 0.3rem 0.3rem !important;"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
+                        <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z"/>
+                      </svg></button>
+                    <script>
+                        document.getElementById("closeKidsMenuButton").onclick = function() {closeKidsMenu()};
+                        function closeKidsMenu() {
+                            document.getElementById("KidsMenu").style.display = "none"
+                        }
+                    </script>
+                </div>
+            </div>
+            <div class="row animate__animated animate__fadeInDown">
+                <div class="col-md-3" style="padding-left: 2rem;">
+                    <ul class="list-unstyled">
+                        <li class="titleOfList"><a href="#">New & Featured</a></li>
+                        <li class="ListItems"><a href="#">New Releases</a></li>
+                        <li class="ListItems"><a href="#">Member Access</a></li>
+                        <li class="ListItems"><a href="#">Air Force 1</a></li>
+                        <li class="ListItems"><a href="#">Summer Essentials</a></li>
+                        <li class="ListItems"><a href="#">Bags and Backpacks</a></li>
+                        <li class="ListItems"><a href="#">Jordan</a></li>
+                        <li class="ListItems"><a href="#">Last Sizes Available</a></li>
+                        <li class="ListItems"><a href="#">Sale</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <div class="row mb-4">
+                        <div class="col-md-12">
+                            <ul class="list-unstyled">
+                                <li class="titleOfList"><a href="#">Boys' Shoes</a></li>
+                                <li class="ListItems"><a href="#">Older Kids (3-6.5)</a></li>
+                                <li class="ListItems"><a href="#">Younger Kids (10-2.5)</a></li>
+                                <li class="ListItems"><a href="#">Baby and Toddler (1.5-9.5)</a></li>
+                                <li class="ListItems"><a href="#">Lifestyle</a></li>
+                                <li class="ListItems"><a href="#">Running</a></li>
+                                <li class="ListItems"><a href="#">Basketball</a></li>
+                                <li class="ListItems"><a href="#">Jordan</a></li>
+                                <li class="ListItems"><a href="#">Football</a></li>
+                                <li class="ListItems"><a href="#">Sandals and Slides</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <ul class="list-unstyled">
+                                <li class="titleOfList"><a href="#">Boys' Clothing</a></li>
+                                <li class="ListItems"><a href="#">Tops and T-Shirts</a></li>
+                                <li class="ListItems"><a href="#">Hoodies and Sweatshirts</a></li>
+                                <li class="ListItems"><a href="#">Pants and Leggings</a></li>
+                                <li class="ListItems"><a href="#">Shorts</a></li>
+                                <li class="ListItems"><a href="#">All Boys' Clothing</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="row mb-4">
+                        <div class="col-md-12">
+                            <ul class="list-unstyled">
+                                <li class="titleOfList"><a href="#">Girls' Shoes</a></li>
+                                <li class="ListItems"><a href="#">Older Kids (3-6.5)</a></li>
+                                <li class="ListItems"><a href="#">Younger Kids (10-2.5)</a></li>
+                                <li class="ListItems"><a href="#">Baby and Toddler (1.5-9.5)</a></li>
+                                <li class="ListItems"><a href="#">Lifestyle</a></li>
+                                <li class="ListItems"><a href="#">Running</a></li>
+                                <li class="ListItems"><a href="#">Basketball</a></li>
+                                <li class="ListItems"><a href="#">Football</a></li>
+                                <li class="ListItems"><a href="#">Sandals and Slides</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <ul class="list-unstyled">
+                                <li class="titleOfList"><a href="#">Girls' Clothing</a></li>
+                                <li class="ListItems"><a href="#">Tops and T-Shirts</a></li>
+                                <li class="ListItems"><a href="#">Hoodies and Sweatshirts</a></li>
+                                <li class="ListItems"><a href="#">Pants and Leggings</a></li>
+                                <li class="ListItems"><a href="#">Shorts</a></li>
+                                <li class="ListItems"><a href="#">All Girls' Clothing</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="row mb-4">
+                        <div class="col-md-12">
+                            <ul class="list-unstyled">
+                                <li class="titleOfList"><a href="#">Accessories and Equipment</a></li>
+                                <li class="ListItems"><a href="#">Balls</a></li>
+                                <li class="ListItems"><a href="#">Bags and Backpacks</a></li>
+                                <li class="ListItems"><a href="#">Socks</a></li>
+                                <li class="ListItems"><a href="#">Hats and Headwear</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <ul class="list-unstyled">
+                                <li class="titleOfList"><a href="#">Shop By Sport</a></li>
+                                <li class="ListItems"><a href="#">Running</a></li>
+                                <li class="ListItems"><a href="#">Football</a></li>
+                                <li class="ListItems"><a href="#">Basketball</a></li>
+                                <li class="ListItems"><a href="#">Gym and Training</a></li>
+                                <li class="ListItems"><a href="#">Tennis</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
 	<!-- Main page -->
 	<div class="container-fluid">
 		<div class="row pt-5 ps-3"><h2 style="font-family: Helveticaneue; font-weight: bold;">Men's Shoes</h2></div>
 		<div class="row">
-			<div class="col-sm col-md-3">
+			<div class="col-sm col-md-3" id="box">
 				<nav class="nav flex-column" style="width: 100%">
 					<a style="color: black" class="nav-link" href="#">Lifestyle</a>
 					<a style="color: black" class="nav-link" href="#">Jordan</a>
@@ -140,42 +537,107 @@
 					<a style="color: black" class="nav-link" href="#">Football</a>
 					<a style="color: black" class="nav-link" href="#">Training & Gym</a>
 					<a style="color: black" class="nav-link" href="#">Skateboarding</a>
-				</nav>
+					<a style="color: black" class="nav-link" href="#">Golf</a>
+					<a style="color: black" class="nav-link" href="#">Tennis</a>
+					<a style="color: black" class="nav-link" href="#">Athletics</a>
+					<a style="color: black" class="nav-link" href="#">Walking</a>
+                     <hr>
+  
+                         <div class="Select">
+                         <p>Gender</p>
+                         <ul>
+                         	<li><input type="checkbox">&nbsp;Men</li>
+                         	<li><input type="checkbox">&nbsp;Women</li>
+                            <li><input type="checkbox">&nbsp;Boys</li>
+                         	<li><input type="checkbox">&nbsp;Girls</li>
+                         	<li><input type="checkbox">&nbsp;Unisex</li>
+                         </ul>
+                         </div>
+                         
+         
+ 
+                        <div class="Size">
+                        <p>Size</p>
+                           <div class="row">
+                            	<div id="size" class="col-md-4">35.5</div>
+                            	<div id="size" class="col-md-4">36</div>
+                            	<div id="size" class="col-md-4">36.5</div>
+                            </div>
+                        	<div class="row pt-2">
+                            	<div id="size" class="col-md-4">37.5</div>
+                            	<div id="size" class="col-md-4">38</div>
+                            	<div id="size" class="col-md-4">38.5</div>
+                            </div>
+                        	<div class="row pt-2">
+                            	<div id="size" class="col-md-4">39</div>
+                            	<div id="size" class="col-md-4">40</div>
+                            	<div id="size"  class="col-md-4">40.5</div>
+                            </div>
+                        	<div class="row pt-2">
+                            	<div id="size" class="col-md-4">41</div>
+                            	<div id="size" class="col-md-4">42</div>
+                            	<div id="size"  class="col-md-4">42.5</div>
+                            </div> 
+                            
+							<div class="row pt-2">
+                            	<div id="size" class="col-md-4">43</div>
+                            	<div id="size" class="col-md-4">44</div>
+                            	<div id="size"  class="col-md-4">44.5</div>
+                            </div>   
+
+							<div class="row pt-2">
+                            	<div id="size" class="col-md-4">45</div>
+                            	<div id="size" class="col-md-4">45.5</div>
+                            	<div id="size"  class="col-md-4">46</div>
+                            </div>   
+                            
+							<div class="row pt-2">
+                            	<div id="size" class="col-md-4">47</div>
+                            	<div id="size" class="col-md-4">47.5</div>
+                            	<div id="size"  class="col-md-4">48</div>
+                            </div>                              
+                        </div>              
+            	</nav>
 			</div>
+            
+
+          
+            
 			<div class="col-md-9">
 				<!-- ROW 1 -->
 				<div class="row pt-2">
 					<div class="col-md-4">
-						<a style="text-decoration: none;" href="#">
-							<img class="card-img" src="img/MenShoes/air-jordan-1-zoom-cmft-shoes-mDxHSk.jpg">
+
+							 <a href="Men_html/1111.html" tabindex="2" target="_parent">
+                             <img class="card-img" src="menshort/1/0.jpg"></a>
 							<p class="mt-2" style="color: black;">
-								Air Jordan 1 Zoom Cmft<br>
-								<span style="color: gray;">Shoes</span><br>
-								<span style="color: gray;">2 Colours</span>
+								NikeCourt Zoom Vapor Cage 4 Rafa<br>
+								<span style="color: gray;">Men's Hard Court Tennis Shoes</span><br>
+								<span style="color: gray;">1 Colours</span>
 							</p>
-							<p style="color: black;" class="mt-3">4,109,000đ</p>
+							<p style="color: black;" class="mt-3">4,409,000₫</p>
 						</a>
 					</div>
 					<div class="col-md-4">
-						<a style="text-decoration: none;" href="#">
-							<img class="card-img" src="img/MenShoes/air-jordan-5-retro-green-bean-shoes-KNZDfn.jpg">
+						<a style="text-decoration: none;" tabindex="2" href="Men_html/2222.html" target="_parent">
+							<img class="card-img" src="menshort/2/0.webp">
 							<p class="mt-2" style="color: black;">
-								Air Jordan Retro Green Bean<br>
+								Nike Dunk Low<br>
 								<span style="color: gray;">Men's Shoes</span><br>
 								<span style="color: gray;">1 Colour</span>
 							</p>
-							<p style="color: black;" class="mt-3">4,219,000đ</p>
+							<p style="color: black;" class="mt-3">3,519,000₫</p>
 						</a>
 					</div>
 					<div class="col-md-4">
-						<a style="text-decoration: none;" href="#">
-							<img class="card-img" src="img/MenShoes/air-jordan-xxxvi-low-basketball-shoes-WWGCpF.jpg">
+						<a style="text-decoration: none;" tabindex="2" href="Men_html/3333.html" target="_parent">
+							<img class="card-img" src="menshort/3/0.webp">
 							<p class="mt-2" style="color: black;">
-								Air Jordan XXXVI Low<br>
-								<span style="color: gray;">Basketball Shoes</span><br>
+								Air Jordan 1 Zoom Cmft<br>
+								<span style="color: gray;">Shoes</span><br>
 								<span style="color: gray;">1 Colour</span>
 							</p>
-							<p style="color: black;" class="mt-3">5,299,000đ</p>
+							<p style="color: black;" class="mt-3">4,109,000₫</p>
 						</a>
 					</div>
 				</div>
@@ -183,36 +645,36 @@
 				<!-- ROW 2 -->
 				<div class="row pt-5">
 					<div class="col-md-4">
-						<a style="text-decoration: none;" href="#">
-							<img class="card-img" src="img/MenShoes/air-max-90-g-golf-shoes-LMWm0d.jpg">
+						<a style="text-decoration: none;" tabindex="2" href="Men_html/4444.html" target="_parent">
+							<img class="card-img" src="menshort/4/0.webp">
 							<p class="mt-2" style="color: black;">
-								Air Max 90 G<br>
-								<span style="color: gray;">Golf Shoes</span><br>
+							Nike Dunk Low SE<br>
+								<span style="color: gray;">Men's Shoe/span><br>
 								<span style="color: gray;">1 Colour</span>
 							</p>
-							<p style="color: black;" class="mt-3">3,109,000đ</p>
+							<p style="color: black;" class="mt-3">3,239,000₫</p>
 						</a>
 					</div>
 					<div class="col-md-4">
-						<a style="text-decoration: none;" href="#">
-							<img class="card-img" src="img/MenShoes/air-presto-hello-kitty-shoes-Nm5Dd5.jpg">
+						<a style="text-decoration: none;" tabindex="2" href="Men_html/5555.html" target="_parent">
+							<img class="card-img" src="menshort/5/0.webp">
 							<p class="mt-2" style="color: black;">
-								Nike Air Presto Hello Kitty<br>
-								<span style="color: gray;">Men's Shoes</span><br>
+								Nike Air Force 1 '07 Craft<br>
+								<span style="color: gray;">Men's Shoes </span><br>
 								<span style="color: gray;">1 Colour</span>
 							</p>
-							<p style="color: black;" class="mt-3">3,519,000đ</p>
+							<p style="color: black;" class="mt-3">3,519,000₫</p>
 						</a>
 					</div>
 					<div class="col-md-4">
-						<a style="text-decoration: none;" href="#">
-							<img class="card-img" src="img/MenShoes/go-flyease-shoe-5nWPkx.jpg">
+						<a style="text-decoration: none;" tabindex="2" href="Men_html/6666.html" target="_parent">
+							<img class="card-img" src="menshort/6/0.webp">
 							<p class="mt-2" style="color: black;">
-								Nike Go Flyease<br>
+								Nike Blazer Mid '77 Jumbo<br>
 								<span style="color: gray;">Men's Shoes</span><br>
 								<span style="color: gray;">1 Colour</span>
 							</p>
-							<p style="color: black;" class="mt-3">4,200,000đ</p>
+							<p style="color: black;" class="mt-3">3,239,000₫</p>
 						</a>
 					</div>
 				</div>
@@ -220,21 +682,21 @@
 				<!-- ROW 3 -->
 				<div class="row pt-5">
 					<div class="col-md-4">
-						<a style="text-decoration: none;" href="#">
-							<img class="card-img" src="img/MenShoes/air-jordan-xxxvi-se-basketball-shoe-LG8Xx7.jpg">
+						<a style="text-decoration: none;" tabindex="2" href="Men_html/7777.html" target="_parent">
+							<img class="card-img"  src="menshort/7/0.webp">
 							<p class="mt-2" style="color: black;">
-								Air Jordan XXXVI SE<br>
-								<span style="color: gray;">Basketball Shoes</span><br>
+								Nike Air Max 90<br>
+								<span style="color: gray;">Slide</span><br>
 								<span style="color: gray;">1 Colour</span>
 							</p>
-							<p style="color: black;" class="mt-3">2,109,000đ</p>
+							<p style="color: black;" class="mt-3">2,189,000₫</p>
 						</a>
 					</div>
 					<div class="col-md-4">
-						<a style="text-decoration: none;" href="#">
-							<img class="card-img" src="img/MenShoes/air-max-95-essential-shoes-2KZw7h.jpg">
+						<a style="text-decoration: none;" tabindex="2" href="Men_html/8888.html" target="_parent">
+							<img class="card-img" src="menshort/8/0.webp">
 							<p class="mt-2" style="color: black;">
-								Nike Air Max 95 Essential<br>
+								Nike Air Max Pre-Day<br>
 								<span style="color: gray;">Men's Shoes</span><br>
 								<span style="color: gray;">1 Colour</span>
 							</p>
@@ -242,14 +704,14 @@
 						</a>
 					</div>
 					<div class="col-md-4">
-						<a style="text-decoration: none;" href="#">
-							<img class="card-img" src="img/MenShoes/vista-sandals-1rGmxQ.jpg">
+						<a style="text-decoration: none;" tabindex="2" href="Men_html/9999.html" target="_parent">
+							<img class="card-img" src="menshort/9/0.webp">
 							<p class="mt-2" style="color: black;">
-								Nike Vista Sandal 1<br>
-								<span style="color: gray;">Sandal</span><br>
+								Nike Air Force 1'07 SE<br>
+								<span style="color: gray;">Women's Shoes</span><br>
 								<span style="color: gray;">1 Colour</span>
 							</p>
-							<p style="color: black;" class="mt-3">2,189,000đ</p>
+							<p style="color: black;" class="mt-3">3,829,000₫</p>
 						</a>
 					</div>
 				</div>
@@ -257,36 +719,36 @@
 				<!-- ROW 4 -->
 				<div class="row pt-5">
 					<div class="col-md-4">
-						<a style="text-decoration: none;" href="#">
-							<img class="card-img" src="img/MenShoes/air-presto-mid-utility-shoes-mkHX2h.jpg">
+						<a style="text-decoration: none;" tabindex="2" href="Men_html/10.html" target="_parent">
+							<img class="card-img"  src="menshort/10/0.webp">
 							<p class="mt-2" style="color: black;">
-								Nike Air Presto Ultility<br>
-								<span style="color: gray;">Shoes</span><br>
+								Nike SB Force 58<br>
+								<span style="color: gray;">Skate Shoe</span><br>
 								<span style="color: gray;">1 Colour</span>
 							</p>
-							<p style="color: black;" class="mt-3">3,159,000đ</p>
+							<p style="color: black;" class="mt-3">2,189,000₫</p>
 						</a>
 					</div>
 					<div class="col-md-4">
-						<a style="text-decoration: none;" href="#">
-							<img class="card-img" src="img/MenShoes/blazer-mid-77-jumbo-shoes-kWXfC7.jpg">
+						<a style="text-decoration: none;" tabindex="2" href="Men_html/11.html" target="_parent">
+							<img class="card-img" src="menshort/11/0.webp">
 							<p class="mt-2" style="color: black;">
-								Nike Blazer Mid 77<br>
-								<span style="color: gray;">Men's Shoes</span><br>
+								Nike ZoomX Vaporfly Next% 2<br>
+								<span style="color: gray;">Men's Road Racing Shoes</span><br>
 								<span style="color: gray;">1 Colour</span>
 							</p>
-							<p style="color: black;" class="mt-3">3,645,000đ</p>
+							<p style="color: black;" class="mt-3">6,609,000₫</p>
 						</a>
 					</div>
 					<div class="col-md-4">
-						<a style="text-decoration: none;" href="#">
-							<img class="card-img" src="img/MenShoes/air-max-pre-day-shoes-jMh2rB.jpg">
+						<a style="text-decoration: none;" tabindex="2" href="Men_html/12.html" target="_parent">
+							<img class="card-img" src="menshort/12/0.webp">
 							<p class="mt-2" style="color: black;">
-								Nike Air Max Pre-day<br>
-								<span style="color: gray;">Men's Shoes</span><br>
+								Nike SB Ishod Wair<br>
+								<span style="color: gray;">Skate Shoes</span><br>
 								<span style="color: gray;">1 Colour</span>
 							</p>
-							<p style="color: black;" class="mt-3">4,189,000đ</p>
+							<p style="color: black;" class="mt-3">2,929,000₫</p>
 						</a>
 					</div>
 				</div>
@@ -294,36 +756,37 @@
 				<!-- ROW 5 -->
 				<div class="row pt-5">
 					<div class="col-md-4">
-						<a style="text-decoration: none;" href="#">
-							<img class="card-img" src="img/MenShoes/air-pegasus-83-shoes-RHK1Jc.jpg">
+						<a style="text-decoration: none;" tabindex="2" href="Men_html/13.html" target="_parent">
+							<img class="card-img" src="menshort/13/0.webp">
 							<p class="mt-2" style="color: black;">
-								Nike Air Pegasus 83<br>
-								<span style="color: gray;">Shoes</span><br>
+								Nike Air Max 270 G<br>
+								<span style="color: gray;">Golf Shoe</span><br>
 								<span style="color: gray;">1 Colour</span>
 							</p>
-							<p style="color: black;" class="mt-3">5,109,000đ</p>
+							<p style="color: black;" class="mt-3">4,409,000₫</p>
 						</a>
 					</div>
 					<div class="col-md-4">
-						<a style="text-decoration: none;" href="#">
-							<img class="card-img" src="img/MenShoes/air-force-1-07-craft-shoe-RxBngv.jpg">
+						<a style="text-decoration: none;" tabindex="2" href="Men_html/14.html" target="_parent">
+							<img class="card-img" src="menshort/14/0.webp">
 							<p class="mt-2" style="color: black;">
-								Nike Air Force 1 '07 Craft<br>
-								<span style="color: gray;">Men's Shoes</span><br>
+								Nike Air Force 1 '07<br>
+								<span style="color: gray;">Women's Shoes</span><br>
 								<span style="color: gray;">1 Colour</span>
 							</p>
-							<p style="color: black;" class="mt-3">3,519,000đ</p>
+							<p style="color: black;" class="mt-3">2,649,000₫</p>
 						</a>
 					</div>
 					<div class="col-md-4">
-						<a style="text-decoration: none;" href="#">
-							<img class="card-img" src="img/MenShoes/air-max-90-slide-bPJh33.jpg">
+						<a style="text-decoration: none;" tabindex="2" href="Men_html/15.html" target="_parent">
+							<img class="card-img" src="menshort/15/0.webp">
+                            
 							<p class="mt-2" style="color: black;">
-								Nike Air Max 90<br>
-								<span style="color: gray;">Slide</span><br>
+								Jordan Break<br>
+								<span style="color: gray;">Slides</span><br>
 								<span style="color: gray;">1 Colour</span>
 							</p>
-							<p style="color: black;" class="mt-3">2,189,000đ</p>
+							<p style="color: black;" class="mt-3">889,000₫</p>
 						</a>
 					</div>
 				</div>
@@ -331,36 +794,36 @@
 				<!-- ROW 6 -->
 				<div class="row pt-5">
 					<div class="col-md-4">
-						<a style="text-decoration: none;" href="#">
-							<img class="card-img" src="img/MenShoes/air-force-1-high-07-shoes-XJtdVt.jpg">
+						<a style="text-decoration: none;" tabindex="2" href="Men_html/16.html" target="_parent">
+							<img class="card-img" src="menshort/16/0.webp">
 							<p class="mt-2" style="color: black;">
-								Air Jordan 1 High 07<br>
-								<span style="color: gray;">Shoes</span><br>
+								Nike Asuna 2<br>
+								<span style="color: gray;">Men's Slides</span><br>
 								<span style="color: gray;">1 Colour</span>
 							</p>
-							<p style="color: black;" class="mt-3">3,740,000đ</p>
+							<p style="color: black;" class="mt-3">1,329,000₫</p>
 						</a>
 					</div>
 					<div class="col-md-4">
-						<a style="text-decoration: none;" href="#">
-							<img class="card-img" src="img/MenShoes/zoomx-invincible-run-flyknit-2-road-running-shoes-xrCMmF.jpg">
+						<a style="text-decoration: none;" tabindex="2" href="Men_html/17.html" target="_parent">
+							<img class="card-img" src="menshort/17/0.webp">
 							<p class="mt-2" style="color: black;">
-								Nike Zoom Invincible Flyknit 2<br>
-								<span style="color: gray;">Road Running Shoes</span><br>
+								Jordan .5 'Why Not?'<br>
+								<span style="color: gray;">Men's Basketball Shoes</span><br>
 								<span style="color: gray;">1 Colour</span>
 							</p>
-							<p style="color: black;" class="mt-3">5,519,000đ</p>
+							<p style="color: black;" class="mt-3">3,829,000₫</p>
 						</a>
 					</div>
 					<div class="col-md-4">
-						<a style="text-decoration: none;" href="#">
-							<img class="card-img" src="img/MenShoes/waffle-debut-shoes-JRWJk7.jpg">
+						<a style="text-decoration: none;" tabindex="2" href="Men_html/18.html" target="_parent">
+							<img class="card-img" src="menshort/18/0.webp">
 							<p class="mt-2" style="color: black;">
-								Nike Waffle Debut<br>
+								Nike Air Max 90<br>
 								<span style="color: gray;">Men's Shoes</span><br>
 								<span style="color: gray;">1 Colour</span>
 							</p>
-							<p style="color: black;" class="mt-3">3,189,000đ</p>
+							<p style="color: black;" class="mt-3">3,519,000₫</p>
 						</a>
 					</div>
 				</div>
@@ -368,36 +831,36 @@
 				<!-- ROW 7 -->
 				<div class="row pt-5">
 					<div class="col-md-4">
-						<a style="text-decoration: none;" href="#">
-							<img class="card-img" src="img/MenShoes/jordan-1-ko-shoes-RLJcHC.jpg">
+						<a style="text-decoration: none;" tabindex="2" href="Men_html/19.html" target="_parent">
+							<img class="card-img" src="menshort/19/0.webp">
 							<p class="mt-2" style="color: black;">
-								Air Jordan 1 KO<br>
-								<span style="color: gray;">Shoes</span><br>
+								Nike Air Max 95 Essential<br>
+								<span style="color: gray;">Men's Shoe</span><br>
 								<span style="color: gray;">1 Colour</span>
 							</p>
-							<p style="color: black;" class="mt-3">3,109,000đ</p>
+							<p style="color: black;" class="mt-3">4,699,000₫</p>
 						</a>
 					</div>
 					<div class="col-md-4">
-						<a style="text-decoration: none;" href="#">
-							<img class="card-img" src="img/MenShoes/dunk-low-se-shoes-nVLS2h.jpg">
+						<a style="text-decoration: none;" tabindex="2" href="Men_html/20.html" target="_parent">
+							<img class="card-img" src="menshort/20/0.webp">
 							<p class="mt-2" style="color: black;">
-								Nike Dunk Low SE<br>
+								Nike Air Max 97<br>
 								<span style="color: gray;">Men's Shoes</span><br>
 								<span style="color: gray;">1 Colour</span>
 							</p>
-							<p style="color: black;" class="mt-3">5,519,000đ</p>
+							<p style="color: black;" class="mt-3">4,999,000₫</p>
 						</a>
 					</div>
 					<div class="col-md-4">
-						<a style="text-decoration: none;" href="#">
-							<img class="card-img" src="img/MenShoes/superrep-go-3-next-nature-flyknit-training-shoes-mxKptW.jpg">
+						<a style="text-decoration: none;" tabindex="2" href="Men_html/21.html" target="_parent">
+							<img class="card-img" src="menshort/21/0.webp">
 							<p class="mt-2" style="color: black;">
-								Nike Sup-Rep GO 3<br>
-								<span style="color: gray;">Training Shoes</span><br>
+								Nike Air Max 95 Essential<br>
+								<span style="color: gray;">Men's Shoes</span><br>
 								<span style="color: gray;">1 Colour</span>
 							</p>
-							<p style="color: black;" class="mt-3">4,189,000đ</p>
+							<p style="color: black;" class="mt-3">4,699,000₫</p>
 						</a>
 					</div>
 				</div>
